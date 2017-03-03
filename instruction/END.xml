@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+  <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontweight="92"></text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontweight="92"></text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Segoe UI">This is the end of your experiment.</text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontweight="92"></text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Segoe UI"></text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Segoe UI">Please raise your hand and an experimenter will tell you where you will get paid.</text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Segoe UI"></text>
+    </paragraph>
+    <paragraph alignment="2">
+      <text fontpointsize="13" fontfamily="74" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Segoe UI">Thank you for your participation in this experiment.</text>
+    </paragraph>
+  </paragraphlayout>
+</richtext>

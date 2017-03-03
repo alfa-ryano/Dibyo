@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+  <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">Preamble</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">Welcome to this experiment and thank you for coming. Please read this instructions carefully. It will help you to understand what you will be asked to do. You will earn money for your participation in this experiment depending on your own performance. You will be paid immediately after its completion.</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">The Experiment</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"There are 35 sheets (we call it Preference Sheet) for you to complete, all of the same type. "</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">To state tou preference in the sheet, you have to block one of answer box.</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">Part of the Screen</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">On the main part of the experiment, you are asked to state you preference.</text>
+    </paragraph>
+  </paragraphlayout>
+</richtext>
