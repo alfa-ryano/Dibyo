@@ -50,5 +50,16 @@ class SubjectNumberPage(wx.Frame):
         self.application.subjectNumber = subjectNumber.strip()
 
     def OnButtonSubmitClick(self, event):
+        subjectNumber = self.application.subjectNumber
+        chars = set('<>:"/\|?*_')
+        if len(subjectNumber) == 0:
+            wx.MessageBox('Subject number cannot be empty!', 'Warning',
+                          wx.OK | wx.ICON_WARNING)
+            return
+        if any((c in chars) for c in subjectNumber):
+            wx.MessageBox('Subject number cannot contain these characters <>:"/\|?*_', 'Warning',
+                          wx.OK | wx.ICON_WARNING)
+            return
+
         self.application.NextPage()
 
