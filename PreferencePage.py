@@ -172,6 +172,7 @@ class PreferencePage(wx.Frame):
             config = ConfigParser.ConfigParser()
             config.read("client.ini")
             server = config.get("Config", "Server")
+            server += "/post"
 
             file = open(csvPath, 'r')
             text = file.read()
