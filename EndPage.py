@@ -3,10 +3,12 @@ import wx.richtext as rt
 import os
 
 class EndPage(wx.Frame):
-    def __init__(self, parent, application):
+    def __init__(self, parent, application, instructionFile):
         super(EndPage, self) \
             .__init__(parent, title="Instruction", size=(640, 480), style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
         self.application = application
+        self.instructionFile = instructionFile
+
         self.Hide()
         self.Center()
         self.initUI()
@@ -25,7 +27,7 @@ class EndPage(wx.Frame):
         wx.FileSystem.AddHandler(wx.MemoryFSHandler()) #add suppport to read xml for richtext
         richText = rt.RichTextCtrl(panel, style=wx.VSCROLL|wx.HSCROLL|wx.NO_BORDER);
         richText.SetFont(fontRichText)
-        path = os.path.abspath("instruction/END.xml")
+        path = os.path.abspath(self.instructionFile)
         richText.LoadFile(path, rt.RICHTEXT_TYPE_XML)
         richText.SetEditable(False)
         richText.SetBackgroundColour(wx.Colour(240, 240, 240))

@@ -12,13 +12,23 @@ COL_HEADER = 0
 
 
 class PreferencePage(wx.Frame):
-    def __init__(self, parent, application):
-        super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480), style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
+    TYPE_EXAMPLE = 0
+    TYPE_DEMO = 1
+    TYPE_REAL = 2
+    TYPE_REAL_FINAL = 3
+
+    def __init__(self, parent, application, instructionFile, sheetFile, type=TYPE_REAL):
+        super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480),
+                                             style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
         self.application = application
+        self.type = type
+        self.instructionFile = instructionFile;
+        self.sheetFile = sheetFile;
+
         self.Hide()
         self.Center()
         self.initUI()
-        #self.Maximize(True)
+        # self.Maximize(True)
         self.ShowFullScreen(True)
         self.Hide()
 
@@ -36,7 +46,7 @@ class PreferencePage(wx.Frame):
         wx.FileSystem.AddHandler(wx.MemoryFSHandler())  # add suppport to read xml for richtext
         richText = rt.RichTextCtrl(panel, style=wx.VSCROLL | wx.HSCROLL | wx.NO_BORDER, size=(-1, 100));
         richText.SetFont(fontRichText)
-        path = os.path.abspath("instruction/PSI-Example.xml")
+        path = os.path.abspath(self.instructionFile)
         richText.LoadFile(path, rt.RICHTEXT_TYPE_XML)
         richText.SetEditable(False)
         richText.SetFocus()
@@ -49,7 +59,7 @@ class PreferencePage(wx.Frame):
         grid = self.grid
         grid.CreateGrid(0, 0)
 
-        csvPath = os.path.abspath("sheets/PS-Example.csv")
+        csvPath = os.path.abspath(self.sheetFile)
         with open(csvPath, 'rb') as csvfile:
             csvReader = csv.reader(csvfile, delimiter=',')
             nCol = len(next(csvReader))
@@ -103,12 +113,22 @@ class PreferencePage(wx.Frame):
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonPrevClick)
         boxPrev.Add(buttonPrev, flag=wx.ALIGN_LEFT)
 
-        hbox3.Add(boxPrev, flag=wx.EXPAND | wx.ALIGN_LEFT, proportion=1)
-        hbox3.Add(boxConfirm, flag=wx.ALIGN_CENTRE, proportion=1)
+        hbox3.Add(boxPrev, flag=wx.ALIGN_LEFT, proportion=1)
+        hbox3.Add(boxConfirm, flag=wx.EXPAND | wx.ALIGN_CENTRE, proportion=1)
         hbox3.Add(boxNext, flag=wx.ALIGN_RIGHT, proportion=1)
         vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
 
         panel.SetSizer(vbox)
+
+        if self.type == self.TYPE_EXAMPLE:
+            buttonConfirm.Hide()
+        elif self.type == self.TYPE_REAL:
+            buttonNext.Hide()
+            buttonPrev.Hide()
+        elif self.type == self.TYPE_REAL_FINAL:
+            buttonNext.Hide()
+            buttonPrev.Hide()
+            buttonConfirm.SetLabelText("FINISH THE EXPERIMENT")
 
     def OnButtonNextClick(self, event):
         self.application.NextPage()
@@ -119,8 +139,10 @@ class PreferencePage(wx.Frame):
     def OnButtonConfirmClick(self, event):
         grid = self.grid
         lines = []
-        filename = self.application.subjectNumber + ".csv"
-        csvPath = os.path.abspath("results/" + filename)
+        sheetName = os.path.basename(self.sheetFile).split(".")[0]
+        filename = self.application.subjectNumber +"_" + sheetName
+        filenameWithExt = filename + ".csv"
+        csvPath = os.path.abspath("results/" + filenameWithExt)
         with open(csvPath, 'wb') as csvfile:
             writer = UnicodeWriter(csvfile, delimiter=",")
             header = ["No"]
@@ -155,7 +177,7 @@ class PreferencePage(wx.Frame):
             text = file.read()
             file.close()
             myData = {
-                "subject": self.application.subjectNumber,
+                "subject": filename,
                 "data": text
             }
             response = requests.post(server, data=myData)
@@ -174,6 +196,8 @@ class PreferencePage(wx.Frame):
             # ftp.quit()
 
             wx.MessageBox('Data have been saved!', 'Info', wx.OK | wx.ICON_INFORMATION)
+            if self.type == self.TYPE_REAL or self.type == self.TYPE_REAL_FINAL:
+                self.application.NextPage()
         except:
             wx.MessageBox('Failed to save data!', 'Info', wx.OK | wx.ICON_INFORMATION)
 

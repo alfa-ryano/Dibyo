@@ -14,9 +14,21 @@ class Application():
         self.subjectNumber = ""
         self.pageList.append(SubjectNumberPage(None, self))
         self.pageList.append(WelcomePage(None, self))
-        self.pageList.append(InstructionPage(None, self))
-        self.pageList.append(PreferencePage(None, self))
-        self.pageList.append(EndPage(None, self))
+        self.pageList.append(InstructionPage(None, self, "instruction/I00.xml", InstructionPage.WITHOUT_PREV_BUTTON))
+        self.pageList.append(PreferencePage(None, self, "instruction/PSI-Example.xml", "sheets/PS-Example.csv",
+                                            PreferencePage.TYPE_EXAMPLE))
+        self.pageList.append(InstructionPage(None, self, "instruction/I01.xml"))
+        self.pageList.append(PreferencePage(None, self, "instruction/PSI-Demo.xml", "sheets/PS-Demo.csv",
+                                            PreferencePage.TYPE_DEMO))
+        self.pageList.append(InstructionPage(None, self, "instruction/I02.xml"))
+        self.pageList.append(InstructionPage(None, self, "instruction/I03.xml"))
+        self.pageList.append(PreferencePage(None, self, "instruction/PSI-01.xml", "sheets/PS-01.csv",
+                                            PreferencePage.TYPE_REAL))
+        self.pageList.append(PreferencePage(None, self, "instruction/PSI-02.xml", "sheets/PS-02.csv",
+                                            PreferencePage.TYPE_REAL))
+        self.pageList.append(PreferencePage(None, self, "instruction/PSI-03.xml", "sheets/PS-03.csv",
+                                            PreferencePage.TYPE_REAL_FINAL))
+        self.pageList.append(EndPage(None, self, "instruction/END.xml"))
 
     def Start(self):
         self.pageList[self.currentPage].Show()
