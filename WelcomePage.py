@@ -1,5 +1,6 @@
 import wx
-from InstructionPage import InstructionPage
+import ConfigParser
+import requests
 
 class WelcomePage(wx.Frame):
     def __init__(self, parent, application):
@@ -50,4 +51,19 @@ class WelcomePage(wx.Frame):
         panel.SetSizer(vbox)
 
     def OnButtonContinueClick(self, event):
+        try:
+            config = ConfigParser.ConfigParser()
+            config.read("client.ini")
+            server = config.get("Config", "Server")
+            server += "/check"
+            response = requests.get(server)
+            if response.text.strip() == "1":
+                wx.MessageBox('Server is still locked. Ask the experimenter to open it!', 'Warning',
+                              wx.OK | wx.ICON_WARNING)
+                return
+        except:
+            wx.MessageBox('Cannot connect to server. Please check your connection!', 'Warning',
+                      wx.OK | wx.ICON_WARNING)
+            return
+
         self.application.NextPage()

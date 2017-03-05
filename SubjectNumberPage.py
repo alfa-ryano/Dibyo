@@ -1,7 +1,4 @@
 import wx
-import ConfigParser
-import requests
-from WelcomePage import WelcomePage
 
 class SubjectNumberPage(wx.Frame):
     def __init__(self, parent, application):
@@ -53,30 +50,14 @@ class SubjectNumberPage(wx.Frame):
 
     def OnButtonSubmitClick(self, event):
         subjectNumber = self.application.subjectNumber
-        chars = set('<>:"/\     |?*_')
         if len(subjectNumber) == 0:
-            wx.MessageBox('Subject number cannot be empty!', 'Warning',
+            wx.MessageBox("Subject number cannot be empty!", "Warning",
                           wx.OK | wx.ICON_WARNING)
             return
 
-        if any((c in chars) for c in subjectNumber):
-            wx.MessageBox('Subject number cannot contain these characters <>:"/\    |?*_', 'Warning',
+        if not subjectNumber.isdigit():
+            wx.MessageBox("Subject number should be numeric!", "Warning",
                           wx.OK | wx.ICON_WARNING)
-            return
-
-        try:
-            config = ConfigParser.ConfigParser()
-            config.read("client.ini")
-            server = config.get("Config", "Server")
-            server += "/check"
-            response = requests.get(server)
-            if response.text.strip() == "1":
-                wx.MessageBox('Server is still locked. Ask the experimenter to open it!', 'Warning',
-                              wx.OK | wx.ICON_WARNING)
-                return
-        except:
-            wx.MessageBox('Cannot connect to server. Please check your connection!', 'Warning',
-                      wx.OK | wx.ICON_WARNING)
             return
 
         self.application.NextPage()

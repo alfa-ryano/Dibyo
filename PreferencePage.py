@@ -18,12 +18,14 @@ class PreferencePage(wx.Frame):
     TYPE_REAL_FINAL = 3
 
     def __init__(self, parent, application, instructionFile, sheetFile, type=TYPE_REAL):
-        super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480),
-                                             style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
+        super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480))
         self.application = application
         self.type = type
         self.instructionFile = instructionFile;
         self.sheetFile = sheetFile;
+        self.selectedColor = wx.Colour(200, 200, 200)
+        self.inactiveColor = wx.Colour(0, 0, 0)
+        self.blankColor = wx.Colour(255, 255, 255)
 
         self.Hide()
         self.Center()
@@ -34,6 +36,8 @@ class PreferencePage(wx.Frame):
 
         self.prevCellRow = -1
         self.prevCellCol = -1
+        self.topRow = 0
+        self.bottomRow = 0
 
     def initUI(self):
         panel = wx.Panel(self)
@@ -70,23 +74,27 @@ class PreferencePage(wx.Frame):
                 if y > COL_HEADER:
                     grid.AppendRows(1)
                 x = 0
-                for cell in row:
+                for value in row:
                     if y == COL_HEADER:
-                        grid.SetColLabelValue(x, cell)
+                        grid.SetColLabelValue(x, value)
                     if y > COL_HEADER:
-                        grid.SetCellValue(y - 1, x, cell)
                         if x == 0:
+                            grid.SetCellValue(y - 1, x, value)
+                            grid.SetCellFont(y - 1, x,
+                                             wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
                             grid.SetCellBackgroundColour(y - 1, 0, wx.Colour(240, 240, 240))
+                        else:
+                            grid.SetCellValue(y - 1, x, "")
+                            if value.strip() == "1":
+                                grid.SetCellBackgroundColour(y - 1, x, self.selectedColor)
+                            elif value.strip() == "0":
+                                grid.SetCellBackgroundColour(y - 1, x, self.inactiveColor)
                     x += 1
                 y += 1
 
         grid.EnableEditing(False)
         grid.AutoSizeColumns()
-        grid.SetCellHighlightColour(wx.Colour(200, 200, 200))
-        grid.SetSelectionBackground(wx.Colour(200, 200, 200))
-        grid.SetCellHighlightPenWidth(10)
         grid.Bind(gr.EVT_GRID_SELECT_CELL, self.OnCellSelect)
-        grid.Bind(gr.EVT_GRID_RANGE_SELECT, self.OnGridRangeSelect)
 
         hbox2.Add(grid, flag=wx.GROW | wx.ALL, proportion=1)
         vbox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM,
@@ -95,40 +103,68 @@ class PreferencePage(wx.Frame):
         hbox3 = wx.BoxSizer(wx.HORIZONTAL)
         font = wx.Font(22, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.BOLD)
 
-        boxNext = wx.BoxSizer(wx.VERTICAL)
+        self.buttonConfirm = wx.Button(panel, label="CONFIRM")
+        self.buttonConfirm.SetFont(font)
+        self.buttonConfirm.Bind(wx.EVT_BUTTON, self.OnButtonConfirmClick)
+        self.buttonConfirm.Disable()
+
         buttonNext = wx.Button(panel, label="NEXT")
         buttonNext.SetFont(font)
         buttonNext.Bind(wx.EVT_BUTTON, self.OnButtonNextClick)
-        boxNext.Add(buttonNext, flag=wx.ALIGN_RIGHT)
 
-        boxConfirm = wx.BoxSizer(wx.VERTICAL)
-        buttonConfirm = wx.Button(panel, label="CONFIRM")
-        buttonConfirm.SetFont(font)
-        buttonConfirm.Bind(wx.EVT_BUTTON, self.OnButtonConfirmClick)
-        boxConfirm.Add(buttonConfirm, flag=wx.ALIGN_CENTER)
+        buttonClear = wx.Button(panel, label="CLEAR")
+        buttonClear.SetFont(font)
+        buttonClear.Bind(wx.EVT_BUTTON, self.OnButtonClearCLick)
 
-        boxPrev = wx.BoxSizer(wx.VERTICAL)
         buttonPrev = wx.Button(panel, label="PREV")
         buttonPrev.SetFont(font)
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonPrevClick)
-        boxPrev.Add(buttonPrev, flag=wx.ALIGN_LEFT)
-
-        hbox3.Add(boxPrev, flag=wx.ALIGN_LEFT, proportion=1)
-        hbox3.Add(boxConfirm, flag=wx.EXPAND | wx.ALIGN_CENTRE, proportion=1)
-        hbox3.Add(boxNext, flag=wx.ALIGN_RIGHT, proportion=1)
-        vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
-
-        panel.SetSizer(vbox)
 
         if self.type == self.TYPE_EXAMPLE:
-            buttonConfirm.Hide()
+            leftBox = wx.BoxSizer(wx.VERTICAL)
+            leftBox.Add(buttonPrev, flag=wx.ALIGN_LEFT)
+            rightBox = wx.BoxSizer(wx.VERTICAL)
+            rightBox.Add(buttonNext, flag=wx.ALIGN_RIGHT)
+            hbox3.Add(leftBox, flag=wx.ALIGN_LEFT, proportion=1)
+            hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT, proportion=1)
+            self.buttonConfirm.Hide()
+            buttonClear.Hide()
+
+        elif self.type == self.TYPE_DEMO:
+            rightBox = wx.BoxSizer(wx.VERTICAL)
+            rightBox.Add(buttonNext, flag=wx.ALIGN_RIGHT)
+            centerBox = wx.BoxSizer(wx.VERTICAL)
+            centerBox.Add(self.buttonConfirm, flag=wx.EXPAND | wx.ALIGN_CENTER)
+            leftBox = wx.BoxSizer(wx.VERTICAL)
+            leftBox.Add(buttonPrev, flag=wx.ALIGN_LEFT)
+            hbox3.Add(leftBox, flag=wx.ALIGN_LEFT)
+            hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
+            hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
+            buttonClear.Hide()
+
         elif self.type == self.TYPE_REAL:
+            centerBox = wx.BoxSizer(wx.VERTICAL)
+            centerBox.Add(self.buttonConfirm, flag=wx.EXPAND | wx.ALIGN_CENTER)
+            hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
+            rightBox = wx.BoxSizer(wx.VERTICAL)
+            rightBox.Add(buttonClear, flag=wx.ALIGN_RIGHT)
+            hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonNext.Hide()
             buttonPrev.Hide()
+
         elif self.type == self.TYPE_REAL_FINAL:
+            self.buttonConfirm.SetLabelText("FINISH THE EXPERIMENT")
+            centerBox = wx.BoxSizer(wx.VERTICAL)
+            centerBox.Add(self.buttonConfirm, flag=wx.EXPAND | wx.ALIGN_CENTER)
+            hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
+            rightBox = wx.BoxSizer(wx.VERTICAL)
+            rightBox.Add(buttonClear, flag=wx.ALIGN_RIGHT)
+            hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonNext.Hide()
             buttonPrev.Hide()
-            buttonConfirm.SetLabelText("FINISH THE EXPERIMENT")
+
+        panel.SetSizer(vbox)
+        vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
 
     def OnButtonNextClick(self, event):
         self.application.NextPage()
@@ -137,38 +173,117 @@ class PreferencePage(wx.Frame):
         self.application.PrevPage()
 
     def OnButtonConfirmClick(self, event):
+        if self.type == self.TYPE_REAL:
+            self.application.NextPage()
+        elif self.type == self.TYPE_REAL_FINAL:
+            if self.SubmitDataToServer():
+                self.application.NextPage()
+
+    def OnButtonClearCLick(self, event):
         grid = self.grid
-        lines = []
-        sheetName = os.path.basename(self.sheetFile).split(".")[0]
-        filename = self.application.subjectNumber +"_" + sheetName
-        filenameWithExt = filename + ".csv"
-        csvPath = os.path.abspath("results/" + filenameWithExt)
-        with open(csvPath, 'wb') as csvfile:
-            writer = UnicodeWriter(csvfile, delimiter=",")
-            header = ["No"]
-            for i in range(0, grid.GetNumberCols(), 1):
-                header.append(grid.GetColLabelValue(i))
-            lines.append(header)
+        for row in range(0, grid.GetNumberRows(), 1):
+            for col in range(1, grid.GetNumberCols(), 1):
+                grid.SetCellValue(row, col, "")
+                grid.SetCellBackgroundColour(row, col, self.blankColor)
 
-            for row in range(0, grid.GetNumberRows(), 1):
-                line = [str(row + 1)]
-                for col in range(0, grid.GetNumberCols(), 1):
-                    grayColor = wx.Colour(200, 200, 200)
-                    whiteColor = wx.Colour(255, 255, 255)
-                    currentColor = grid.GetCellBackgroundColour(row, col)
-                    if currentColor.GetRGBA() == grayColor.GetRGBA():
-                        line.append(str(1))
-                    else:
-                        if currentColor.GetRGBA() == whiteColor.GetRGBA():
-                            line.append(str(0))
-                        else:
-                            line.append(grid.GetCellValue(row, col))
-                lines.append(line)
+        self.topRow = 0
+        self.bottomRow = 0
+        self.buttonConfirm.Disable()
 
-            writer.writerows(lines)
+    def OnCellSelect(self, event):
+        grid = self.grid
+        row = event.GetRow()
+        col = event.GetCol()
+
+        if self.type in [self.TYPE_DEMO, self.TYPE_EXAMPLE]:
+            return
+
+        # No response if a user clicks on cells on column proposed amount of money
+        if event.GetCol() == 0:
+            return
+
+        # No response if a user clicks on inactive cells
+        selectedGridColor = grid.GetCellBackgroundColour(row, col)
+        if selectedGridColor.GetRGBA() == self.inactiveColor.GetRGBA():
+            return
+
+        # Set color to the inactive cells
+        self.bottomRow = row;
+        # left inactive cells
+        for r in range(self.topRow, self.bottomRow + 1, 1):
+            for c in range(1, col, 1):
+                grid.SetCellValue(r, col, "")
+                grid.SetCellBackgroundColour(r, c, self.inactiveColor)
+        # right inactive cells
+        for r in range(self.topRow, self.bottomRow + 1, 1):
+            for c in range(col + 1, grid.GetNumberCols(), 1):
+                grid.SetCellValue(r, col, "")
+                grid.SetCellBackgroundColour(r, c, self.inactiveColor)
+        # left bottom side inactive cells
+        for r in range(self.bottomRow, grid.GetNumberRows(), 1):
+            for c in range(1, col, 1):
+                grid.SetCellValue(r, col, "")
+                grid.SetCellBackgroundColour(r, c, self.inactiveColor)
+
+        # Set color to selected cells
+        for r in range(self.topRow, self.bottomRow + 1, 1):
+            grid.SetCellValue(r, col, "")
+            grid.SetCellBackgroundColour(r, col, self.selectedColor)
+
+        # Check whether blank cell exists or not
+        isBlankCellExists = False
+        for row in range(0, grid.GetNumberRows(), 1):
+            for col in range(1, grid.GetNumberCols(), 1):
+                cellColor = grid.GetCellBackgroundColour(row, col)
+                if cellColor.GetRGBA() == self.blankColor.GetRGBA():
+                    isBlankCellExists = True
+                    break;
+            if isBlankCellExists:
+                break;
+        if isBlankCellExists:
+            self.buttonConfirm.Disable()
+        else:
+            self.buttonConfirm.Enable()
+
+        # update top row and col for next selection iteration
+        self.topRow = row
+        self.topCol = col
+
+    def SubmitDataToServer(self):
+        try:
+            preferenceSheetList = [sheet for sheet in self.application.pageList
+                                   if isinstance(sheet, PreferencePage) and sheet.type in [self.TYPE_REAL,
+                                                                                           self.TYPE_REAL_FINAL]]
+            preferenceSheetNumber = 1
+            data = []
+            for preferenceSheet in preferenceSheetList:
+                row = [str(preferenceSheetNumber)]
+                grid = preferenceSheet.grid
+
+                for gridRow in range(0, grid.GetNumberRows(), 1):
+                    text = grid.GetCellValue(gridRow, 0).encode("utf-8")
+                    nominalValue = text[6:]
+                    row.append(nominalValue)
+
+                    for gridCol in range(1, grid.GetNumberCols(), 1):
+                        cellColor = grid.GetCellBackgroundColour(gridRow, gridCol)
+                        if cellColor.GetRGBA() == self.selectedColor.GetRGBA():
+                            value = gridCol
+                            row.append(str(value))
+
+                rowString = ", ".join(row)
+                print rowString
+                data.append(rowString)
+                preferenceSheetNumber += 1
+
+            filename = self.application.subjectNumber
+            filenameWithExt = filename + ".csv"
+            csvPath = os.path.abspath("results/" + filenameWithExt)
+
+            csvfile = open(csvPath, 'w')
+            csvfile.write("\n".join(data))
             csvfile.close()
 
-        try:
             config = ConfigParser.ConfigParser()
             config.read("client.ini")
             server = config.get("Config", "Server")
@@ -186,84 +301,17 @@ class PreferencePage(wx.Frame):
                 print "Error Save on Server"
                 raise NameError("Error Save on Server")
 
-            ### Uncomment this if you want to use FTP
-            # ftp = ftplib.FTP("files.000webhost.com")
-            # ftp.login("alfa-ryano", "ZXCzxc")
-            # # ftp = ftplib.FTP("localhost")
-            # # ftp.login("user", "1234")
-            # file = open(csvPath, "r")
-            # ftp.storlines("STOR " + filename, file)
-            # file.close()
-            # ftp.quit()
+                ### Uncomment this if you want to use FTP
+                # ftp = ftplib.FTP("files.000webhost.com")
+                # ftp.login("alfa-ryano", "ZXCzxc")
+                # # ftp = ftplib.FTP("localhost")
+                # # ftp.login("user", "1234")
+                # file = open(csvPath, "r")
+                # ftp.storlines("STOR " + filename, file)
+                # file.close()
+                # ftp.quit()
 
-            wx.MessageBox('Data have been saved!', 'Info', wx.OK | wx.ICON_INFORMATION)
-            if self.type == self.TYPE_REAL or self.type == self.TYPE_REAL_FINAL:
-                self.application.NextPage()
-        except:
-            wx.MessageBox('Failed to save data!', 'Info', wx.OK | wx.ICON_INFORMATION)
-
-    def OnGridRangeSelect(self, event):
-        grid = self.grid
-        grayColor = wx.Colour(200, 200, 200)
-        whiteColor = wx.Colour(255, 255, 255)
-
-        if event.ShiftDown():
-            topRow = event.GetTopLeftCoords().Row
-            topCol = event.GetTopLeftCoords().Col
-            bottomRow = event.GetBottomRightCoords().Row
-            bottomCol = event.GetBottomRightCoords().Col
-
-            grid.SetCellHighlightPenWidth(0)
-
-            prevCellColour = grid.GetCellBackgroundColour(self.prevCellRow, self.prevCellCol)
-            if prevCellColour.GetRGBA() == whiteColor.GetRGBA():
-                grid.SetCellBackgroundColour(self.prevCellRow, self.prevCellCol, whiteColor)
-            else:
-                grid.SetCellBackgroundColour(self.prevCellRow, self.prevCellCol, grayColor)
-            prevCellNewColour = grid.GetCellBackgroundColour(self.prevCellRow, self.prevCellCol)
-
-            for row in range(topRow, bottomRow + 1, 1):
-                for col in range(topCol, bottomCol + 1, 1):
-                    if col == 0:
-                        continue
-                    grid.SetCellBackgroundColour(row, col, prevCellNewColour)
-
-        if event.ControlDown():
-            grid.SetCellHighlightPenWidth(0)
-
-            prevCellColour = grid.GetCellBackgroundColour(self.prevCellRow, self.prevCellCol)
-            if prevCellColour.GetRGBA() == whiteColor.GetRGBA():
-                grid.SetCellBackgroundColour(self.prevCellRow, self.prevCellCol, whiteColor)
-            else:
-                grid.SetCellBackgroundColour(self.prevCellRow, self.prevCellCol, grayColor)
-            prevCellNewColour = grid.GetCellBackgroundColour(self.prevCellRow, self.prevCellCol)
-
-            for cell in grid.GetSelectedCells():
-                row = cell[0]
-                col = cell[1]
-                if col == 0:
-                    continue
-                grid.SetCellBackgroundColour(row, col, prevCellNewColour)
-
-    def OnCellSelect(self, event):
-        grid = self.grid
-        row = event.GetRow()
-        col = event.GetCol()
-        if col == 0:
-            return
-        grayColor = wx.Colour(200, 200, 200)
-        whiteColor = wx.Colour(255, 255, 255)
-        currentColor = grid.GetCellBackgroundColour(row, col)
-        if event.Selecting():
-            grid.SetCellHighlightPenWidth(10)
-            if currentColor.GetRGBA() == grayColor.GetRGBA():
-                grid.SetCellBackgroundColour(row, col, whiteColor)
-                grid.SetSelectionBackground(whiteColor)
-                grid.SetCellHighlightColour(whiteColor)
-            else:
-                grid.SetCellBackgroundColour(row, col, grayColor)
-                grid.SetSelectionBackground(grayColor)
-                grid.SetCellHighlightColour(grayColor)
-
-        self.prevCellRow = row
-        self.prevCellCol = col
+            return True
+        except Exception as e:
+            print e.message
+            return False
