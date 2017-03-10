@@ -312,7 +312,6 @@ class PreferencePage(wx.Frame):
                             row.append(str(value))
 
                 rowString = ", ".join(row)
-                print rowString
                 data.append(rowString)
                 preferenceSheetNumber += 1
 

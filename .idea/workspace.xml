@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fa7b1b0-5ffa-4f2b-aabd-daaa06a91522" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sheets/Lottery.original.csv" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instruction/PSI-02.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instruction/PSI-03.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sheets/PS-01.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sheets/PS-02.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sheets/PS-03.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sheets/PS-Demo.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sheets/PS-Example.backup.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sheets/PS-Example.csv" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/instruction/PSI-01.xml" afterPath="$PROJECT_DIR$/instruction/PreferenceSheetInstruction.xml" />
+    <list default="true" id="8fa7b1b0-5ffa-4f2b-aabd-daaa06a91522" name="Default" comment="Update preference sheets so they will be automatically generated based on variables defined in Lottery.csv">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreferencePage.py" afterPath="$PROJECT_DIR$/PreferencePage.py" />
@@ -60,6 +50,7 @@
       <find>SetSelectionBackground</find>
       <find>submit</find>
       <find>sheetFile</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,9 +72,9 @@
         <option value="$PROJECT_DIR$/SubjectNumberPage.py" />
         <option value="$PROJECT_DIR$/server/server.ini" />
         <option value="$PROJECT_DIR$/instruction/PreferenceSheetInstruction.xml" />
-        <option value="$PROJECT_DIR$/PreferencePage.py" />
         <option value="$PROJECT_DIR$/sheets/Lottery.csv" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/PreferencePage.py" />
       </list>
     </option>
   </component>
@@ -493,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488678695797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update preference sheets so they will be automatically generated based on variables defined in Lottery.csv">
+      <created>1489178150041</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1489178150041</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -540,7 +538,8 @@
     <MESSAGE value="Update validation for subject number" />
     <MESSAGE value="Update check whether server is still locked or not" />
     <MESSAGE value="Finish ... Complete ..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish ... Complete ..." />
+    <MESSAGE value="Update preference sheets so they will be automatically generated based on variables defined in Lottery.csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update preference sheets so they will be automatically generated based on variables defined in Lottery.csv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -824,20 +823,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/PreferencePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        <state relative-caret-position="152">
+          <caret line="339" column="21" lean-forward="false" selection-start-line="339" selection-start-column="16" selection-end-line="339" selection-end-column="21" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PreferencePage.py">
+    <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="64" column="55" lean-forward="true" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

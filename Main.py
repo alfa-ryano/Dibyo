@@ -38,7 +38,6 @@ class Application():
             # if it's the last form then the type of Pref. Sheet should be TYPE_REAL_FINAL
             if i == len(rows) - 1:
                 type = PreferencePage.TYPE_REAL_FINAL
-            print row
 
             v1, p1, v2, p2 = float(row[0]), float(row[1]), float(row[2]), float(row[3])
             self.pageList.append(PreferencePage(None, self, "instruction/PreferenceSheetInstruction.xml",
