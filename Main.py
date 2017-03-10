@@ -1,4 +1,6 @@
 import wx
+import os
+import csv
 
 from SubjectNumberPage import SubjectNumberPage
 from WelcomePage import WelcomePage
@@ -8,26 +10,41 @@ from EndPage import EndPage
 
 
 class Application():
-    def __init__(self):
+    def __init__(self, mainProcess):
+        self.mainProcess = mainProcess
         self.pageList = []
         self.currentPage = 0
         self.subjectNumber = ""
         self.pageList.append(SubjectNumberPage(None, self))
         self.pageList.append(WelcomePage(None, self))
         self.pageList.append(InstructionPage(None, self, "instruction/I00.xml", InstructionPage.WITHOUT_PREV_BUTTON))
-        self.pageList.append(PreferencePage(None, self, "instruction/PSI-Example.xml", "sheets/PS-Example.csv",
-                                            PreferencePage.TYPE_EXAMPLE))
+        self.pageList.append(PreferencePage(None, self, "instruction/PreferenceSheetInstruction.xml",
+                                            PreferencePage.TYPE_EXAMPLE, 30, 0.65, 15, 0.35))
         self.pageList.append(InstructionPage(None, self, "instruction/I01.xml"))
-        self.pageList.append(PreferencePage(None, self, "instruction/PSI-Demo.xml", "sheets/PS-Demo.csv",
-                                            PreferencePage.TYPE_DEMO))
+        self.pageList.append(PreferencePage(None, self, "instruction/PreferenceSheetInstruction.xml",
+                                            PreferencePage.TYPE_DEMO, 30, 0.65, 15, 0.35))
         self.pageList.append(InstructionPage(None, self, "instruction/I02.xml"))
         self.pageList.append(InstructionPage(None, self, "instruction/I03.xml"))
-        self.pageList.append(PreferencePage(None, self, "instruction/PSI-01.xml", "sheets/PS-01.csv",
-                                            PreferencePage.TYPE_REAL))
-        self.pageList.append(PreferencePage(None, self, "instruction/PSI-02.xml", "sheets/PS-02.csv",
-                                            PreferencePage.TYPE_REAL))
-        self.pageList.append(PreferencePage(None, self, "instruction/PSI-03.xml", "sheets/PS-03.csv",
-                                            PreferencePage.TYPE_REAL_FINAL))
+
+
+        csvPath = os.path.abspath("sheets/Lottery.csv")
+        csvfile = open(csvPath, 'rb')
+        csvReader = csv.reader(csvfile, delimiter=',')
+        rows = list(csvReader)
+        i = 0
+        while i < len(rows):
+            row = rows[i]
+            type = PreferencePage.TYPE_REAL
+            # if it's the last form then the type of Pref. Sheet should be TYPE_REAL_FINAL
+            if i == len(rows) - 1:
+                type = PreferencePage.TYPE_REAL_FINAL
+            print row
+
+            v1, p1, v2, p2 = float(row[0]), float(row[1]), float(row[2]), float(row[3])
+            self.pageList.append(PreferencePage(None, self, "instruction/PreferenceSheetInstruction.xml",
+                                                type , v1, p1, v2, p2))
+            i += 1
+        csvfile.close()
         self.pageList.append(EndPage(None, self, "instruction/END.xml"))
 
     def Start(self):
@@ -54,8 +71,8 @@ class Application():
         for page in self.pageList:
             page.Hide()
             page.Close()
-
+        self.mainProcess.Destroy()
 
 app = wx.App()
-Application().Start()
+Application(app).Start()
 app.MainLoop()

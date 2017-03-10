@@ -2,11 +2,9 @@ import wx
 import wx.richtext as rt
 import wx.grid as gr
 import os
-import csv
-import ftplib
-from MyUtil import UnicodeWriter
 import requests
 import ConfigParser
+from StringIO import StringIO
 
 COL_HEADER = 0
 
@@ -17,15 +15,18 @@ class PreferencePage(wx.Frame):
     TYPE_REAL = 2
     TYPE_REAL_FINAL = 3
 
-    def __init__(self, parent, application, instructionFile, sheetFile, type=TYPE_REAL):
+    def __init__(self, parent, application, instructionFile, type=TYPE_REAL, v1=0, p1=0, v2=0, p2=0):
         super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480))
         self.application = application
         self.type = type
-        self.instructionFile = instructionFile;
-        self.sheetFile = sheetFile;
+        self.instructionFile = instructionFile
         self.selectedColor = wx.Colour(200, 200, 200)
         self.inactiveColor = wx.Colour(0, 0, 0)
         self.blankColor = wx.Colour(255, 255, 255)
+        self.v1 = v1;
+        self.p1 = p1;
+        self.v2 = v2;
+        self.p2 = p2;
 
         self.Hide()
         self.Center()
@@ -52,8 +53,30 @@ class PreferencePage(wx.Frame):
         richText.SetFont(fontRichText)
         path = os.path.abspath(self.instructionFile)
         richText.LoadFile(path, rt.RICHTEXT_TYPE_XML)
+
+        # reading the xml from the richtext
+        handler = wx.richtext.RichTextXMLHandler()
+        buffer = richText.GetBuffer()
+        inputOutput = StringIO()
+        handler.SaveStream(buffer, inputOutput)
+        inputOutput.seek(0)
+        text = inputOutput.read()
+        # replace the variable markups with the real values
+        text = text.replace("[v1]", ('%.2f' % self.v1))
+        text = text.replace("[v2]", ('%.2f' % self.v2))
+        text = text.replace("[p1]", ('%.2f' % self.p1))
+        text = text.replace("[p2]", ('%.2f' % self.p2))
+        # rewrite the xml back to the richtext
+        handler2 = wx.richtext.RichTextXMLHandler()
+        buffer2 = richText.GetBuffer()
+        inputOutput2 = StringIO()
+        buffer2.AddHandler(handler2)
+        inputOutput2.write(text)
+        inputOutput2.seek(0)
+        handler.LoadStream(buffer2, inputOutput2)
+        richText.Refresh()
+
         richText.SetEditable(False)
-        richText.SetFocus()
         # richText.SetBackgroundColour(wx.Colour(240,240,240))
         hbox1.Add(richText, flag=wx.EXPAND, proportion=1)
         vbox.Add(hbox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
@@ -62,35 +85,26 @@ class PreferencePage(wx.Frame):
         self.grid = gr.Grid(panel, -1)
         grid = self.grid
         grid.CreateGrid(0, 0)
+        grid.AppendCols(6)
 
-        csvPath = os.path.abspath(self.sheetFile)
-        with open(csvPath, 'rb') as csvfile:
-            csvReader = csv.reader(csvfile, delimiter=',')
-            nCol = len(next(csvReader))
-            grid.AppendCols(numCols=nCol)
-            csvfile.seek(0)
-            y = 0
-            for row in csvReader:
-                if y > COL_HEADER:
-                    grid.AppendRows(1)
-                x = 0
-                for value in row:
-                    if y == COL_HEADER:
-                        grid.SetColLabelValue(x, value)
-                    if y > COL_HEADER:
-                        if x == 0:
-                            grid.SetCellValue(y - 1, x, value)
-                            grid.SetCellFont(y - 1, x,
-                                             wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
-                            grid.SetCellBackgroundColour(y - 1, 0, wx.Colour(240, 240, 240))
-                        else:
-                            grid.SetCellValue(y - 1, x, "")
-                            if value.strip() == "1":
-                                grid.SetCellBackgroundColour(y - 1, x, self.selectedColor)
-                            elif value.strip() == "0":
-                                grid.SetCellBackgroundColour(y - 1, x, self.inactiveColor)
-                    x += 1
-                y += 1
+        grid.SetColLabelValue(0, "Proposed Amount of Money")
+        grid.SetColLabelValue(1, "I'm sure I prefer Option A")
+        grid.SetColLabelValue(2, "I think I prefer Option A but I'm not sure")
+        grid.SetColLabelValue(3, "I'm indifferent between Option A and Option B")
+        grid.SetColLabelValue(4, "I think I prefer Option B but I'm not sure")
+        grid.SetColLabelValue(5, "I'm sure I prefer Option B")
+
+        decrement = 0.50
+        v1, v2, p1, p2 = self.v1, self.v2, self.p1, self.p2
+        row, col = 0, 0
+        while v1 >= v2:
+            grid.AppendRows(1)
+            grid.SetCellValue(row, col, "For \xA3" + ('%.2f' % v1))
+            grid.SetCellFont(row, col, wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
+            grid.SetCellBackgroundColour(row, col, wx.Colour(240, 240, 240))
+            grid.SetCellAlignment(row, col, wx.ALIGN_CENTRE, wx.ALIGN_TOP)
+            v1 -= decrement
+            row += 1
 
         grid.EnableEditing(False)
         grid.AutoSizeColumns()
@@ -141,6 +155,32 @@ class PreferencePage(wx.Frame):
             hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
             hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonClear.Hide()
+
+            for row in range(0, grid.GetNumberRows(), 1):
+                for col in range(1, grid.GetNumberCols(), 1):
+                    grid.SetCellValue(row, col, "")
+                    grid.SetCellBackgroundColour(row, col, self.inactiveColor)
+
+            for row in range(0, 7, 1):
+                grid.SetCellValue(row, 1, "")
+                grid.SetCellBackgroundColour(row, 1, self.selectedColor)
+
+            for row in range(7, 13, 1):
+                grid.SetCellValue(row, 2, "")
+                grid.SetCellBackgroundColour(row, 2, self.selectedColor)
+
+            for row in range(13, 19, 1):
+                grid.SetCellValue(row, 3, "")
+                grid.SetCellBackgroundColour(row, 3, self.selectedColor)
+
+            for row in range(19, 25, 1):
+                grid.SetCellValue(row, 4, "")
+                grid.SetCellBackgroundColour(row, 4, self.selectedColor)
+
+            for row in range(25, grid.GetNumberRows(), 1):
+                grid.SetCellValue(row, 5, "")
+                grid.SetCellBackgroundColour(row, 5, self.selectedColor)
+
 
         elif self.type == self.TYPE_REAL:
             centerBox = wx.BoxSizer(wx.VERTICAL)
