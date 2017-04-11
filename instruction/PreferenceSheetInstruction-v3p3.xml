@@ -47,6 +47,11 @@
       <text textcolor="#FF0000" fontpointsize="13" fontweight="92" fontface="Arial">&#163;[v2]</text>
       <text fontpointsize="13" fontface="Arial">" with a probability of "</text>
       <text textcolor="#FF0000" fontpointsize="13" fontweight="92" fontface="Arial">[p2]</text>
+      <text fontpointsize="13" fontweight="92" fontface="Arial">" "</text>
+      <text fontpointsize="13" fontface="Arial">"or "</text>
+      <text textcolor="#FF0000" fontpointsize="13" fontweight="92" fontface="Arial">&#163;[v3]</text>
+      <text fontpointsize="13" fontface="Arial">" with a probability of "</text>
+      <text textcolor="#FF0000" fontpointsize="13" fontweight="92" fontface="Arial">[p3]</text>
       <text fontpointsize="13" fontweight="90" fontface="Arial">.</text>
     </paragraph>
   </paragraphlayout>

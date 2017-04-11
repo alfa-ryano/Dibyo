@@ -3,15 +3,12 @@ import wx.richtext as rt
 import os
 from PreferencePage import PreferencePage
 
-
-class InstructionPage(wx.Frame):
+class PaymentPage(wx.Frame):
     WITHOUT_PREV_BUTTON = 0
     WITH_PREV_BUTTON = 1
-    PAYMENT = 2
-    LAST = 3
 
     def __init__(self, parent, application, instructionFile, type=WITH_PREV_BUTTON):
-        super(InstructionPage, self).__init__(parent, title="Instruction", size=(640, 480),
+        super(PaymentPage, self).__init__(parent, title="Payment", size=(640, 480),
                                               style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
         self.application = application
         self.type = type
@@ -23,19 +20,20 @@ class InstructionPage(wx.Frame):
         # self.Maximize(True)
         self.ShowFullScreen(True)
         self.Hide()
-
+    
     def initUI(self):
         panel = wx.Panel(self)
-
+        
         vbox = wx.BoxSizer(wx.VERTICAL)
-
+        hbox1 = wx.BoxSizer(wx.HORIZONTAL)
+        
         hbox1 = wx.BoxSizer(wx.HORIZONTAL)
         font = wx.Font(22, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.BOLD)
-        labelTitle = wx.StaticText(panel, label="INSTRUCTION")
+        labelTitle = wx.StaticText(panel, label="YOUR PAYMENT")
         labelTitle.SetFont(font)
         hbox1.Add(labelTitle, flag=wx.ALIGN_CENTRE, proportion=1)
         vbox.Add(hbox1, flag=wx.ALIGN_CENTRE | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
-
+        
         hbox2 = wx.BoxSizer(wx.VERTICAL)
         fontRichText = wx.Font(12, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.NORMAL)
         rt.RichTextBuffer.AddHandler(rt.RichTextXMLHandler())  # add suppport to read xml for richtext
@@ -53,7 +51,7 @@ class InstructionPage(wx.Frame):
         hbox3 = wx.BoxSizer(wx.HORIZONTAL)
 
         boxNext = wx.BoxSizer(wx.VERTICAL)
-        buttonNext = wx.Button(panel, label="NEXT")
+        buttonNext = wx.Button(panel, label="GO TO THE EXPERIMENT")
         buttonNext.SetFont(font)
         buttonNext.Bind(wx.EVT_BUTTON, self.OnButtonNextClick)
         boxNext.Add(buttonNext, flag=wx.ALIGN_RIGHT)
@@ -69,19 +67,10 @@ class InstructionPage(wx.Frame):
         vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
 
         panel.SetSizer(vbox)
-
-        if self.type == self.WITHOUT_PREV_BUTTON:
-            buttonPrev.Hide()
-            
-        elif self.type == self.PAYMENT:
-            buttonNext.SetLabel("GO TO PRACTICE SESSION")
-            
-        elif self.type == self.LAST:
-            buttonNext.SetLabel("GO TO THE EXPERIMENT")            
-            buttonPrev.Hide()
-
+        
     def OnButtonPrevClick(self, event):
         self.application.PrevPage()
 
     def OnButtonNextClick(self, event):
         self.application.NextPage()
+        

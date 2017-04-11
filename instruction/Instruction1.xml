@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+  <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">Preamble</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">Welcome to this experiment and thank you for coming. Please read this instruction carefully. It will help you to understand what you will be asked to do. You will earn money for your participation in this experiment depending on your own performance. You will be paid immediately after its completion.</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">The Experiment</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"There are thirty five (35) sheets (we call it Preference Sheet) for you to complete, all of the same type. Each sheet has rows that ask you to state your preference over varied certain money "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">(Option A)</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" or a fix lottery "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">(Option B)</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">". The number of rows in each sheet depends on the range of the highest and the lowest money in the lottery with the decrement of fifty (50) pence. There are seven (7) columns in the Preference Sheet of which first column is the row's number, second column is proposed certain money and third to seventh column are the answer boxes. You are given five (5) answer options to state your preference over "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option A</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" or "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">": i) "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm sure I prefer Option A</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"; ii) "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I think I prefer Option A but I'm not sure</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"; iii) "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm indifferent between Option A and Option B;</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" iv) I"</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">" think I prefer Option B but I'm not sure"</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"; v) "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm sure I prefer Option B</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">.</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"To state your preference in the sheet, you have to block one answer box at the last row that you think it represents your preference in the particular row and its previous row(s). The computer will automatically block the previous row(s) for you. You can modify your answer as you wish by clicking "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">CLEAR</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" button in the bottom right of the screen. Once you think your answers represent your preference in the particular Preference Sheet, should you click "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">CONFIRM</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" button in the bottom of the screen. The screen will continue to the next Preference Sheet after you click "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">CONFIRM</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" button. "</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">Please notice that you can only choose one column in a row. You also cannot choose back the same column(s) again once you have decided to choose another column in the following row(s).</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">Part of the Screen</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"On the main part of the experiment, you are asked to state you preference in the Preference Sheet. There are information of "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option A</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" and "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">, and the proposed certain money in each row. Next page is the example of the Preference Sheet.</text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+  </paragraphlayout>
+</richtext>

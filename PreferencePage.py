@@ -4,7 +4,10 @@ import wx.grid as gr
 import os
 import requests
 import ConfigParser
+
 from StringIO import StringIO
+from threading import Timer
+
 
 COL_HEADER = 0
 
@@ -14,19 +17,23 @@ class PreferencePage(wx.Frame):
     TYPE_DEMO = 1
     TYPE_REAL = 2
     TYPE_REAL_FINAL = 3
+    TYPE_PRACTICE = 4
 
-    def __init__(self, parent, application, instructionFile, type=TYPE_REAL, v1=0, p1=0, v2=0, p2=0):
+    def __init__(self, parent, application, instructionFile, type=TYPE_REAL, pn=0, v1=0, p1=0, v2=0, p2=0, v3=0, p3=0):
         super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480))
         self.application = application
         self.type = type
         self.instructionFile = instructionFile
-        self.selectedColor = wx.Colour(200, 200, 200)
-        self.inactiveColor = wx.Colour(0, 0, 0)
+        self.selectedColor = wx.Colour(67, 110, 238)
+        self.inactiveColor = wx.Colour(254, 254, 254)
         self.blankColor = wx.Colour(255, 255, 255)
-        self.v1 = v1;
-        self.p1 = p1;
-        self.v2 = v2;
-        self.p2 = p2;
+        self.pn = pn
+        self.p1 = p1
+        self.v1 = v1
+        self.v2 = v2
+        self.p2 = p2
+        self.v3 = v3
+        self.p3 = p3
 
         self.Hide()
         self.Center()
@@ -40,6 +47,11 @@ class PreferencePage(wx.Frame):
         self.topRow = 0
         self.bottomRow = 0
 
+        self.duration = 5
+        self.isBlankCellExists = True
+        self.timerActive = False
+        self.Bind(wx.EVT_SHOW, self.pageShow)
+
     def initUI(self):
         panel = wx.Panel(self)
 
@@ -49,7 +61,7 @@ class PreferencePage(wx.Frame):
         fontRichText = wx.Font(12, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.NORMAL)
         rt.RichTextBuffer.AddHandler(rt.RichTextXMLHandler())  # add suppport to read xml for richtext
         wx.FileSystem.AddHandler(wx.MemoryFSHandler())  # add suppport to read xml for richtext
-        richText = rt.RichTextCtrl(panel, style=wx.VSCROLL | wx.HSCROLL | wx.NO_BORDER, size=(-1, 100));
+        richText = rt.RichTextCtrl(panel, style=wx.VSCROLL | wx.HSCROLL | wx.NO_BORDER, size=(-1, 190));
         richText.SetFont(fontRichText)
         path = os.path.abspath(self.instructionFile)
         richText.LoadFile(path, rt.RICHTEXT_TYPE_XML)
@@ -62,10 +74,17 @@ class PreferencePage(wx.Frame):
         inputOutput.seek(0)
         text = inputOutput.read()
         # replace the variable markups with the real values
+        text = text.replace("[pn]", ('%.0f' % self.pn))
         text = text.replace("[v1]", ('%.2f' % self.v1))
         text = text.replace("[v2]", ('%.2f' % self.v2))
         text = text.replace("[p1]", ('%.2f' % self.p1))
         text = text.replace("[p2]", ('%.2f' % self.p2))
+
+        if self.v3 != - 1:
+            text = text.replace("[v3]", ('%.2f' % self.v3))
+        if self.p3 != - 1:
+            text = text.replace("[p3]", ('%.2f' % self.p3))
+
         # rewrite the xml back to the richtext
         handler2 = wx.richtext.RichTextXMLHandler()
         buffer2 = richText.GetBuffer()
@@ -95,7 +114,7 @@ class PreferencePage(wx.Frame):
         grid.SetColLabelValue(5, "I'm sure I prefer Option B")
 
         decrement = 0.50
-        v1, v2, p1, p2 = self.v1, self.v2, self.p1, self.p2
+        v1, v2, p1, p2, pn = self.v1, self.v2, self.p1, self.p2, self.pn
         row, col = 0, 0
         while v1 >= v2:
             grid.AppendRows(1)
@@ -133,6 +152,11 @@ class PreferencePage(wx.Frame):
         buttonPrev = wx.Button(panel, label="PREV")
         buttonPrev.SetFont(font)
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonPrevClick)
+        
+        self.buttonCon = wx.Button(panel, label="CONFIRM")
+        self.buttonCon.SetFont(font)
+        self.buttonCon.Bind(wx.EVT_BUTTON, self.OnButtonNextClick)
+        self.buttonCon.Disable()
 
         if self.type == self.TYPE_EXAMPLE:
             leftBox = wx.BoxSizer(wx.VERTICAL)
@@ -143,6 +167,7 @@ class PreferencePage(wx.Frame):
             hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT, proportion=1)
             self.buttonConfirm.Hide()
             buttonClear.Hide()
+            self.buttonCon.Hide()
 
         elif self.type == self.TYPE_DEMO:
             rightBox = wx.BoxSizer(wx.VERTICAL)
@@ -155,32 +180,43 @@ class PreferencePage(wx.Frame):
             hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
             hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonClear.Hide()
+            self.buttonCon.Hide()
 
             for row in range(0, grid.GetNumberRows(), 1):
                 for col in range(1, grid.GetNumberCols(), 1):
                     grid.SetCellValue(row, col, "")
                     grid.SetCellBackgroundColour(row, col, self.inactiveColor)
 
-            for row in range(0, 7, 1):
+            for row in range(0, 8, 1):
                 grid.SetCellValue(row, 1, "")
                 grid.SetCellBackgroundColour(row, 1, self.selectedColor)
 
-            for row in range(7, 13, 1):
+            for row in range(8, 13, 1):
                 grid.SetCellValue(row, 2, "")
                 grid.SetCellBackgroundColour(row, 2, self.selectedColor)
 
-            for row in range(13, 19, 1):
+            for row in range(13, 17, 1):
                 grid.SetCellValue(row, 3, "")
                 grid.SetCellBackgroundColour(row, 3, self.selectedColor)
 
-            for row in range(19, 25, 1):
+            for row in range(17, 20, 1):
                 grid.SetCellValue(row, 4, "")
                 grid.SetCellBackgroundColour(row, 4, self.selectedColor)
 
-            for row in range(25, grid.GetNumberRows(), 1):
+            for row in range(20, grid.GetNumberRows(), 1):
                 grid.SetCellValue(row, 5, "")
                 grid.SetCellBackgroundColour(row, 5, self.selectedColor)
 
+        elif self.type == self.TYPE_PRACTICE:
+            centerBox = wx.BoxSizer(wx.VERTICAL)
+            centerBox.Add(self.buttonCon, flag=wx.EXPAND | wx.ALIGN_CENTER)
+            hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
+            rightBox = wx.BoxSizer(wx.VERTICAL)
+            rightBox.Add(buttonClear, flag=wx.ALIGN_RIGHT)
+            hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
+            buttonNext.Hide()
+            buttonPrev.Hide()
+            self.buttonConfirm.Hide()
 
         elif self.type == self.TYPE_REAL:
             centerBox = wx.BoxSizer(wx.VERTICAL)
@@ -191,9 +227,10 @@ class PreferencePage(wx.Frame):
             hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonNext.Hide()
             buttonPrev.Hide()
+            self.buttonCon.Hide()
 
         elif self.type == self.TYPE_REAL_FINAL:
-            self.buttonConfirm.SetLabelText("FINISH THE EXPERIMENT")
+            self.buttonConfirm.SetLabel("FINISH THE EXPERIMENT")
             centerBox = wx.BoxSizer(wx.VERTICAL)
             centerBox.Add(self.buttonConfirm, flag=wx.EXPAND | wx.ALIGN_CENTER)
             hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
@@ -202,6 +239,7 @@ class PreferencePage(wx.Frame):
             hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonNext.Hide()
             buttonPrev.Hide()
+            self.buttonCon.Hide()
 
         panel.SetSizer(vbox)
         vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
@@ -229,6 +267,7 @@ class PreferencePage(wx.Frame):
         self.topRow = 0
         self.bottomRow = 0
         self.buttonConfirm.Disable()
+        self.buttonCon.Disable()
 
     def OnCellSelect(self, event):
         grid = self.grid
@@ -271,19 +310,25 @@ class PreferencePage(wx.Frame):
             grid.SetCellBackgroundColour(r, col, self.selectedColor)
 
         # Check whether blank cell exists or not
-        isBlankCellExists = False
+        self.isBlankCellExists = False
         for row in range(0, grid.GetNumberRows(), 1):
             for col in range(1, grid.GetNumberCols(), 1):
                 cellColor = grid.GetCellBackgroundColour(row, col)
                 if cellColor.GetRGBA() == self.blankColor.GetRGBA():
-                    isBlankCellExists = True
-                    break;
-            if isBlankCellExists:
-                break;
-        if isBlankCellExists:
+                    self.isBlankCellExists = True
+                    break
+            if self.isBlankCellExists:
+                break
+        if self.isBlankCellExists:
             self.buttonConfirm.Disable()
+            self.buttonCon.Disable()
         else:
-            self.buttonConfirm.Enable()
+            if self.timerActive == False:
+                self.buttonConfirm.Enable()
+                self.buttonCon.Enable()
+            else:
+                self.buttonConfirm.Disable()
+                self.buttonCon.Disable()
 
         # update top row and col for next selection iteration
         self.topRow = row
@@ -317,7 +362,7 @@ class PreferencePage(wx.Frame):
 
             filename = self.application.subjectNumber
             filenameWithExt = filename + ".csv"
-            csvPath = os.path.abspath("results/" + filenameWithExt)
+            csvPath = os.path.abspath("results/subject" + filenameWithExt)
 
             csvfile = open(csvPath, 'w')
             csvfile.write("\n".join(data))
@@ -340,17 +385,35 @@ class PreferencePage(wx.Frame):
                 print "Error Save on Server"
                 raise NameError("Error Save on Server")
 
-                ### Uncomment this if you want to use FTP
-                # ftp = ftplib.FTP("files.000webhost.com")
-                # ftp.login("alfa-ryano", "ZXCzxc")
-                # # ftp = ftplib.FTP("localhost")
-                # # ftp.login("user", "1234")
-                # file = open(csvPath, "r")
-                # ftp.storlines("STOR " + filename, file)
-                # file.close()
-                # ftp.quit()
-
             return True
         except Exception as e:
             print e.message
             return False
+
+    def pageShow(self, event):
+        if event.IsShown:
+            print self.instructionFile, ",",str(self.v3),",",str(self.p3)
+            if self.type in [PreferencePage.TYPE_REAL, PreferencePage.TYPE_REAL_FINAL, PreferencePage.TYPE_PRACTICE]:
+                self.ticking()
+                self.timerActive = True
+
+    def ticking(self):
+        self.buttonConfirm.SetLabelText("CONFIRM (" + str(self.duration) + ")")
+        self.buttonCon.SetLabelText("CONFIRM (" + str(self.duration) + ")")
+        self.timer = Timer(1.0, self.ticking)
+        self.timer.start()
+
+        if self.duration <= 0:
+            self.timer.cancel()
+            self.timerActive = False
+            self.buttonConfirm.SetLabelText("CONFIRM")
+            self.buttonCon.SetLabelText("CONFIRM")
+            if self.isBlankCellExists == False:
+                self.buttonConfirm.Enable()
+                self.buttonCon.Enable()
+            else:
+                self.buttonConfirm.Disable()
+                self.buttonCon.Disable()
+            return
+
+        self.duration -= 1
