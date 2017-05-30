@@ -8,8 +8,8 @@ import ConfigParser
 from StringIO import StringIO
 from threading import Timer
 
-
 COL_HEADER = 0
+NUM_OF_COLS = 5 #for now only allow 3 or 5 columns
 
 
 class PreferencePage(wx.Frame):
@@ -47,12 +47,12 @@ class PreferencePage(wx.Frame):
         self.topRow = 0
         self.bottomRow = 0
 
-        self.duration = 5
-        self.isBlankCellExists = True
-        self.timerActive = False
+        self.duration = 3  # Timer duration in seconds
+        self.isBlankCellExists = True  # the cell is still blank
+        self.timerActive = False  # the timer is inactive
         self.Bind(wx.EVT_SHOW, self.pageShow)
 
-    def initUI(self):
+    def initUI(self):  # define a panel for the preference page
         panel = wx.Panel(self)
 
         vbox = wx.BoxSizer(wx.VERTICAL)
@@ -104,14 +104,23 @@ class PreferencePage(wx.Frame):
         self.grid = gr.Grid(panel, -1)
         grid = self.grid
         grid.CreateGrid(0, 0)
-        grid.AppendCols(6)
 
-        grid.SetColLabelValue(0, "Proposed Amount of Money")
-        grid.SetColLabelValue(1, "I'm sure I prefer Option A")
-        grid.SetColLabelValue(2, "I think I prefer Option A but I'm not sure")
-        grid.SetColLabelValue(3, "I'm indifferent between Option A and Option B")
-        grid.SetColLabelValue(4, "I think I prefer Option B but I'm not sure")
-        grid.SetColLabelValue(5, "I'm sure I prefer Option B")
+        if NUM_OF_COLS == 3:
+            grid.AppendCols(4)
+
+            grid.SetColLabelValue(0, "Proposed Amount\nof Money")
+            grid.SetColLabelValue(1, "I'm sure I prefer Option A")
+            grid.SetColLabelValue(2, "I'm indifferent between\nOption A and Option B")
+            grid.SetColLabelValue(3, "I'm sure I prefer Option B")
+
+        elif NUM_OF_COLS == 5:
+            grid.AppendCols(6)
+            grid.SetColLabelValue(0, "Proposed Amount\nof Money")
+            grid.SetColLabelValue(1, "I'm sure I prefer Option A")
+            grid.SetColLabelValue(2, "I think I prefer Option A\nbut I'm not sure")
+            grid.SetColLabelValue(3, "I'm indifferent between\nOption A and Option B")
+            grid.SetColLabelValue(4, "I think I prefer Option B\nbut I'm not sure")
+            grid.SetColLabelValue(5, "I'm sure I prefer Option B")
 
         decrement = 0.50
         v1, v2, p1, p2, pn = self.v1, self.v2, self.p1, self.p2, self.pn
@@ -126,7 +135,6 @@ class PreferencePage(wx.Frame):
             row += 1
 
         grid.EnableEditing(False)
-        grid.AutoSizeColumns()
         grid.Bind(gr.EVT_GRID_SELECT_CELL, self.OnCellSelect)
 
         hbox2.Add(grid, flag=wx.GROW | wx.ALL, proportion=1)
@@ -152,7 +160,7 @@ class PreferencePage(wx.Frame):
         buttonPrev = wx.Button(panel, label="PREV")
         buttonPrev.SetFont(font)
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonPrevClick)
-        
+
         self.buttonCon = wx.Button(panel, label="CONFIRM")
         self.buttonCon.SetFont(font)
         self.buttonCon.Bind(wx.EVT_BUTTON, self.OnButtonNextClick)
@@ -187,25 +195,39 @@ class PreferencePage(wx.Frame):
                     grid.SetCellValue(row, col, "")
                     grid.SetCellBackgroundColour(row, col, self.inactiveColor)
 
-            for row in range(0, 8, 1):
-                grid.SetCellValue(row, 1, "")
-                grid.SetCellBackgroundColour(row, 1, self.selectedColor)
+            if NUM_OF_COLS == 3:
+                for row in range(0, 11, 1):
+                    grid.SetCellValue(row, 1, "")
+                    grid.SetCellBackgroundColour(row, 1, self.selectedColor)
 
-            for row in range(8, 13, 1):
-                grid.SetCellValue(row, 2, "")
-                grid.SetCellBackgroundColour(row, 2, self.selectedColor)
+                for row in range(11, 18, 1):
+                    grid.SetCellValue(row, 2, "")
+                    grid.SetCellBackgroundColour(row, 2, self.selectedColor)
 
-            for row in range(13, 17, 1):
-                grid.SetCellValue(row, 3, "")
-                grid.SetCellBackgroundColour(row, 3, self.selectedColor)
+                for row in range(18, grid.GetNumberRows(), 1):
+                    grid.SetCellValue(row, 3, "")
+                    grid.SetCellBackgroundColour(row, 3, self.selectedColor)
 
-            for row in range(17, 20, 1):
-                grid.SetCellValue(row, 4, "")
-                grid.SetCellBackgroundColour(row, 4, self.selectedColor)
+            elif NUM_OF_COLS == 5:
+                for row in range(0, 8, 1):
+                    grid.SetCellValue(row, 1, "")
+                    grid.SetCellBackgroundColour(row, 1, self.selectedColor)
 
-            for row in range(20, grid.GetNumberRows(), 1):
-                grid.SetCellValue(row, 5, "")
-                grid.SetCellBackgroundColour(row, 5, self.selectedColor)
+                for row in range(8, 13, 1):
+                    grid.SetCellValue(row, 2, "")
+                    grid.SetCellBackgroundColour(row, 2, self.selectedColor)
+
+                for row in range(13, 17, 1):
+                    grid.SetCellValue(row, 3, "")
+                    grid.SetCellBackgroundColour(row, 3, self.selectedColor)
+
+                for row in range(17, 20, 1):
+                    grid.SetCellValue(row, 4, "")
+                    grid.SetCellBackgroundColour(row, 4, self.selectedColor)
+
+                for row in range(20, grid.GetNumberRows(), 1):
+                    grid.SetCellValue(row, 5, "")
+                    grid.SetCellBackgroundColour(row, 5, self.selectedColor)
 
         elif self.type == self.TYPE_PRACTICE:
             centerBox = wx.BoxSizer(wx.VERTICAL)
@@ -243,6 +265,25 @@ class PreferencePage(wx.Frame):
 
         panel.SetSizer(vbox)
         vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
+
+        ###Resize columns
+        grid.SetDefaultCellOverflow(True)
+        grid.SetDefaultEditor(wx.grid.GridCellAutoWrapStringEditor())
+        grid.AutoSizeColumns()
+        for col in range(1, grid.GetNumberCols(), 1):
+            grid.SetCellOverflow(0, col, True)
+
+        total = 0
+        widestCol = 0
+        for col in range(1, grid.GetNumberCols(), 1):
+            if widestCol < grid.GetColSize(col):
+                widestCol = grid.GetColSize(col)
+
+        for col in range(1, grid.GetNumberCols(), 1):
+            grid.SetColSize(col, widestCol)
+
+        grid.DisableDragColSize()
+        grid.DisableDragRowSize()
 
     def OnButtonNextClick(self, event):
         self.application.NextPage()
@@ -298,11 +339,14 @@ class PreferencePage(wx.Frame):
             for c in range(col + 1, grid.GetNumberCols(), 1):
                 grid.SetCellValue(r, col, "")
                 grid.SetCellBackgroundColour(r, c, self.inactiveColor)
-        # left bottom side inactive cells
-        for r in range(self.bottomRow, grid.GetNumberRows(), 1):
-            for c in range(1, col, 1):
-                grid.SetCellValue(r, col, "")
-                grid.SetCellBackgroundColour(r, c, self.inactiveColor)
+
+        ### Uncomment these following code to disable selecting remaining left
+        ### bottom cells on the left side of cells already selected
+        # # left bottom side inactive cells
+        # for r in range(self.bottomRow, grid.GetNumberRows(), 1):
+        #     for c in range(1, col, 1):
+        #         grid.SetCellValue(r, col, "")
+        #         grid.SetCellBackgroundColour(r, c, self.inactiveColor)
 
         # Set color to selected cells
         for r in range(self.topRow, self.bottomRow + 1, 1):
@@ -392,7 +436,6 @@ class PreferencePage(wx.Frame):
 
     def pageShow(self, event):
         if event.IsShown:
-            print self.instructionFile, ",",str(self.v3),",",str(self.p3)
             if self.type in [PreferencePage.TYPE_REAL, PreferencePage.TYPE_REAL_FINAL, PreferencePage.TYPE_PRACTICE]:
                 self.ticking()
                 self.timerActive = True

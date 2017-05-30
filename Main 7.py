@@ -1,7 +1,7 @@
 """
-This is version 5 for imprecise preference
-Modified on 13/03/17
-This version imports files from directory Imprecise 5
+This is version 6 for imprecise preference
+Modified on 11/04/17
+This version imports files from directory Imprecise 6
 """
 
 import wx
@@ -10,7 +10,7 @@ import csv
 
 from SubjectNumberPage import SubjectNumberPage
 from WelcomePage import WelcomePage
-from PreferencePage5columns import PreferencePage
+from PreferencePage import PreferencePage
 from InstructionPage import InstructionPage
 from EndPage import EndPage
 from MyUtil import isfloat
@@ -91,7 +91,6 @@ class Application():
             self.pageList[self.currentPage].Show()
             self.pageList[self.currentPage - 1].Hide()
 
-
     def PrevPage(self):
         self.currentPage -= 1
         if self.currentPage < 0:
@@ -101,13 +100,11 @@ class Application():
             self.pageList[self.currentPage + 1].Hide()
 
     def Shutdown(self):
+        self.mainProcess.Exit()
         for page in self.pageList:
             page.Hide()
-            page.Close()
-        self.mainProcess.Destroy()
+            page.Close(True)
 
-
-
-app = wx.App()
+app = wx.App(False)
 Application(app).Start()
 app.MainLoop()

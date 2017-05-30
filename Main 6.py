@@ -1,7 +1,7 @@
 """
-This is version 5 for imprecise preference
-Modified on 13/03/17
-This version imports files from directory Imprecise 5
+This is version 6 for imprecise preference
+Modified on 11/04/17
+This version imports files from directory Imprecise 6
 """
 
 import wx
@@ -23,7 +23,7 @@ class Application():
         self.subjectNumber = ""
         
         # You write your number down on the box
-        self.pageList.append(SubjectNumberPage(None, self))
+        self.pageList.append(SubjectNumberPage(None, self))     
         # Nothing fancy, but you can click 'CONTINUE' as it is opened by the server
         self.pageList.append(WelcomePage(None, self))
         # The first page of instruction. This page is with next button but without previous button. It reads particular instruction file
@@ -91,7 +91,6 @@ class Application():
             self.pageList[self.currentPage].Show()
             self.pageList[self.currentPage - 1].Hide()
 
-
     def PrevPage(self):
         self.currentPage -= 1
         if self.currentPage < 0:
@@ -105,8 +104,6 @@ class Application():
             page.Hide()
             page.Close()
         self.mainProcess.Destroy()
-
-
 
 app = wx.App()
 Application(app).Start()

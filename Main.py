@@ -4,7 +4,7 @@ import csv
 
 from SubjectNumberPage import SubjectNumberPage
 from WelcomePage import WelcomePage
-from PreferencePage import PreferencePage
+from PreferencePage5columns import PreferencePage
 from InstructionPage import InstructionPage
 from EndPage import EndPage
 

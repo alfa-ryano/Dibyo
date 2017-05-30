@@ -1,7 +1,7 @@
 import wx
 import wx.richtext as rt
 import os
-from PreferencePage import PreferencePage
+from PreferencePage5columns import PreferencePage
 
 class PaymentPage(wx.Frame):
     WITHOUT_PREV_BUTTON = 0
