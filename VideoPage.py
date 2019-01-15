@@ -1,15 +1,17 @@
+import cv2
 import wx
 import wx.richtext as rt
 import os
 
-class InstructionPage(wx.Frame):
+
+class VideoPage(wx.Frame):
     WITHOUT_PREV_BUTTON = 0
     WITH_PREV_BUTTON = 1
     PAYMENT = 2
     LAST = 3
 
-    def __init__(self, parent, application, instructionFile, type=WITH_PREV_BUTTON):
-        super(InstructionPage, self).__init__(parent, title="Instruction", size=(640, 480),
+    def __init__(self, parent, application, instructionFile, type = WITH_PREV_BUTTON):
+        super(VideoPage, self).__init__(parent, title="Instruction", size=(640, 480),
                                               style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
         self.application = application
         self.type = type
@@ -50,21 +52,28 @@ class InstructionPage(wx.Frame):
 
         hbox3 = wx.BoxSizer(wx.HORIZONTAL)
 
-        boxNext = wx.BoxSizer(wx.VERTICAL)
-        buttonNext = wx.Button(panel, label="NEXT")
-        buttonNext.SetFont(font)
-        buttonNext.Bind(wx.EVT_BUTTON, self.OnButtonNextClick)
-        boxNext.Add(buttonNext, flag=wx.ALIGN_RIGHT)
+        boxVideo = wx.BoxSizer(wx.VERTICAL)
+        buttonVideo = wx.Button(panel, label = "PLAY VIDEO")
+        buttonVideo.SetFont(font)
+        buttonVideo.Bind(wx.EVT_BUTTON, self.OnButtonVideoClick)
+        boxVideo.Add(buttonVideo, flag = wx.ALIGN_RIGHT)
 
         boxPrev = wx.BoxSizer(wx.VERTICAL)
-        buttonPrev = wx.Button(panel, label="PREV")
+        buttonPrev = wx.Button(panel, label = "PREV")
         buttonPrev.SetFont(font)
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonPrevClick)
         boxPrev.Add(buttonPrev, flag=wx.ALIGN_LEFT)
+        
+        boxConfirm = wx.BoxSized(wx.VERTICAL)
+        buttonConfirm = wx.BUtton(panel, label = "GO TO PROBLEMS")
+        buttonConfirm.SetFont(font)
+        buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonConfirmClick)
+        boxConfirm.Add(buttonVideo, flag = wx.ALIGN_CENTRE)        
 
-        hbox3.Add(boxPrev, flag=wx.ALIGN_LEFT, proportion=1)
-        hbox3.Add(boxNext, flag=wx.ALIGN_RIGHT, proportion=1)
-        vbox.Add(hbox3, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
+        hbox3.Add(boxPrev, flag = wx.ALIGN_LEFT, proportion = 1)
+        hbox3.Add(boxVideo, flag = wx.ALIGN_RIGHT, proportion = 1)
+        hbox3.Add(boxConfirm, flag = wx.ALIGN_CENTER, proportion = 1)
+        vbox.Add(hbox3, flag = wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border = 8)
 
         panel.SetSizer(vbox)
 
@@ -72,14 +81,27 @@ class InstructionPage(wx.Frame):
             buttonPrev.Hide()
             
         elif self.type == self.PAYMENT:
-            buttonNext.SetLabel("GO TO PRACTICE SESSION")
+            buttonVideo.SetLabel("GO TO PRACTICE SESSION")
             
         elif self.type == self.LAST:
-            buttonNext.SetLabel("GO TO THE EXPERIMENT")            
+            buttonVideo.SetLabel("GO TO THE EXPERIMENT")            
             buttonPrev.Hide()
 
     def OnButtonPrevClick(self, event):
         self.application.PrevPage()
 
-    def OnButtonNextClick(self, event):
+    def OnButtonVideoClick(self, event):
+        cap = cv2.VideoCapture('images/sample.flv')
+        while True:
+            ret, frame = cap.read()
+            cv2.imshow('frame',frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+            
+        cap.release()
+        cv2.destroyAllWindows()
+
+    def OnButtonConfirmClick(self, event):
         self.application.NextPage()
+
+

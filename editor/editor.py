@@ -5,7 +5,6 @@ import wx
 import wx.richtext as rt
 import images
 
-
 # ----------------------------------------------------------------------
 
 class RichTextFrame(wx.Frame):
@@ -650,9 +649,7 @@ class RichTextFrame(wx.Frame):
 
         tbar.Realize()
 
-
 # ----------------------------------------------------------------------
-
 
 class TestPanel(wx.Panel):
     def __init__(self, parent, log):
@@ -695,17 +692,13 @@ class TestPanel(wx.Panel):
         self.rtfrm = win
         self.rtc = win.rtc
 
-
 # ----------------------------------------------------------------------
 
 def runTest(frame, nb, log):
     win = TestPanel(nb, log)
     return win
 
-
 # ----------------------------------------------------------------------
-
-
 
 overview = """<html><body>
 <h2><center>wx.richtext.RichTextCtrl</center></h2>

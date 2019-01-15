@@ -6,7 +6,6 @@ import ConfigParser
 
 PORT_NUMBER = 8888
 
-
 class ServerHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
@@ -67,7 +66,6 @@ class ServerHandler(BaseHTTPRequestHandler):
             self.wfile.write(value)
 
         return
-
 
 try:
     server = HTTPServer(('', PORT_NUMBER), ServerHandler)

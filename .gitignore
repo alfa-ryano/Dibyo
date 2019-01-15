@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# My Ignore List
+images/sample.FLV
+*.pyc
+ftp/
+results/
+log_client.txt
+log_server.txt

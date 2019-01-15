@@ -1,99 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
   <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
-    <paragraph>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">Payment</text>
-    </paragraph>
-    <paragraph>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"Your payment for participating in this experiment will be determined by your performance during the experiment plus a show-up fee. You will be presented a closed bag containing numbered disks from 1 to 35 that indicate the number of Preference Shet in the payment room. You pick a disk from the bag to decide which Preference Sheet to be your payment basis. You will, once again, be presented a closed bag containing numbered disks depending on how many rows in the chosen Preference Sheet. You pick a disk from the bag to decide which row in the chosen Preference Sheet to play for real. If, on the selected row, your answer is either "</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm sure I prefer Option A</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" or "</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm sure I prefer Option B</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" then you will directly play for it; that is, if your answer is "</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm sure I prefer Option A</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" you will get the proposed certain money, if your answer is "</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">I'm sure I prefer Option B</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">34</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" you will play the lottery. Otherwise, you will decide your payment using these following rules:"</text>
-    </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
       <text fontpointsize="16"></text>
     </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">-</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"If your answer is "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">&#8220;I think I prefer Option A but I'm not sure&#8221;</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" in the selected row: you will pick a disk from a closed bag containing "</text>
+      <text fontpointsize="16" fontweight="92" fontunderlined="1"></text>
     </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"      numbered disks from 1 to 100. If you get one disk numbered 1 to 75, you will have "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option A</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" as your payment basis (receive certain "</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"      money). If you get one disk numbered 76 to 100, you will have "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" as your payment basis (play lottery as stated in "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">).</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">-</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"If your answer is "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">&#8220;I'm not sure about my preference&#8221;</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" in the selected row: you will pick a disk from a closed bag containing numbered "</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"      disks from 1 to 100. If you get one disk numbered 1 to 50, you will have "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option A</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" as your payment basis (receive certain money). If "</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"      you get one disk numbered 51 to 100, you will have "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" as your payment basis (play lottery as stated in "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">).</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">-</text>
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"If your answer is "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">&#8220;I think I prefer Option B but I'm not sure&#8221;</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" in the selected row: you will pick a disk from a closed bag containing "</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"      numbered disks from 1 to 100. If you get one disk numbered 1 to 25, you will have "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option A</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" as your payment basis (receive certain "</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <symbol fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">9</symbol>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"      money). If you get one disk numbered 26 to 100, you will have "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" as your payment basis (play lottery as stated in "</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Option B</text>
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">).</text>
-    </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial" alignment="2">
+      <text fontpointsize="16" fontstyle="90" fontweight="90" fontunderlined="0">-------------- Instructions are here ------------</text>
     </paragraph>
   </paragraphlayout>
 </richtext>

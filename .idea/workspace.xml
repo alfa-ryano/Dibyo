@@ -2,13 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa7b1b0-5ffa-4f2b-aabd-daaa06a91522" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sheets/Lottery.backup.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main 5.py" afterPath="$PROJECT_DIR$/Main 5.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaymentPage.py" afterPath="$PROJECT_DIR$/PaymentPage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreferencePage.py" afterPath="$PROJECT_DIR$/PreferencePage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sheets/Lottery.csv" afterPath="$PROJECT_DIR$/sheets/Lottery.csv" />
+      <change afterPath="$PROJECT_DIR$/test/testvideo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstructionPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/InstructionPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main 5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main 6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PreferencePage.Backup.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreferencePage.Backup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PreferencePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreferencePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.ini" beforeDir="false" afterPath="$PROJECT_DIR$/client.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ftp/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ftp/1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ftp/123456789.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ftp/123456789.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ftp/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ftp/2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ftp/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ftp/result.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/END.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/END.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/ExampleInstruction.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/ExampleInstruction.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/Instruction1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/Instruction1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/Instruction3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/Instruction3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/Instruction4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/Instruction4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/Practice1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/Practice1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/Practice2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/Practice2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/PreferenceSheetInstruction-v3p3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/PreferenceSheetInstruction-v3p3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction/PreferenceSheetInstruction.xml" beforeDir="false" afterPath="$PROJECT_DIR$/instruction/PreferenceSheetInstruction.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/123456789.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/123456789.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/result.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/subject1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/subject1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sheets/Lottery def.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sheets/Lottery def.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sheets/Lottery.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sheets/Lottery.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sheets/Lottery.original.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sheets/Lottery.original.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,9 +43,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Dibyo$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1547571244465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dibyo$MainPage.coverage" NAME="MainPage Coverage Results" MODIFIED="1547579488698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dibyo$server.coverage" NAME="server Coverage Results" MODIFIED="1547579500981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/Dibyo$Editor.coverage" NAME="Editor Coverage Results" MODIFIED="1491930013001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/editor" />
-    <SUITE FILE_PATH="coverage/Dibyo$server.coverage" NAME="server Coverage Results" MODIFIED="1496158579572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/Dibyo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1496166110843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dibyo$testvideo.coverage" NAME="testvideo Coverage Results" MODIFIED="1547570796984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Dibyo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1547572144411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dibyo$Main_7.coverage" NAME="Main 7 Coverage Results" MODIFIED="1547573234817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -33,25 +62,62 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Dibyo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PreferencePage.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PreferencePage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Main 7.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Main 7.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#127#136#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PreferencePage.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/PreferencePage.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-801">
+                  <caret line="281" selection-start-line="281" selection-end-line="281" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MainPage.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/MainPage.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="MainPage.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/MainPage.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="117">
+                  <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,6 +149,7 @@
         <option value="$PROJECT_DIR$/server/index.html" />
         <option value="$PROJECT_DIR$/server/server.py" />
         <option value="$PROJECT_DIR$/EndPage.py" />
+        <option value="$PROJECT_DIR$/InstructionPage.py" />
         <option value="$PROJECT_DIR$/client.ini" />
         <option value="$PROJECT_DIR$/WelcomePage.py" />
         <option value="$PROJECT_DIR$/SubjectNumberPage.py" />
@@ -92,11 +159,8 @@
         <option value="$PROJECT_DIR$/instruction/PreferenceSheetInstruction.xml" />
         <option value="$PROJECT_DIR$/Main 5.py" />
         <option value="$PROJECT_DIR$/sheets/Lottery.csv" />
-        <option value="$PROJECT_DIR$/PreferencePage5columns.py" />
-        <option value="$PROJECT_DIR$/PreferencePage3columns.py" />
-        <option value="$PROJECT_DIR$/InstructionPage.py" />
-        <option value="$PROJECT_DIR$/Main 7.py" />
         <option value="$PROJECT_DIR$/PreferencePage.py" />
+        <option value="$PROJECT_DIR$/MainPage.py" />
       </list>
     </option>
   </component>
@@ -106,74 +170,35 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1060" />
+    <option name="x" value="-7" />
+    <option name="width" value="1088" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dibyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dibyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dibyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dibyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dibyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dibyo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="results" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="Dibyo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dibyo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,8 +206,8 @@
     <property name="nodejs_interpreter_path" value="C:/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="coverage" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main 7.py" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main 5.py" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -193,18 +218,47 @@
       </console-settings>
     </option>
   </component>
-  <component name="PyCoverageOptionsProvider">
-    <option name="myUseBundledCoveragePy" value="true" />
-  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WinPython-32bit-2.7.10.3\workspace\Dibyo\instruction" />
       <recent name="C:\WinPython-32bit-2.7.10.3\workspace\Dibyo\sheets" />
       <recent name="C:\WinPython-32bit-2.7.10.3\workspace\Dibyo" />
-      <recent name="C:\WinPython-32bit-2.7.10.3\workspace\Dibyo\instruction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
-    <configuration default="false" name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.server">
+    <configuration name="Editor" type="PythonConfigurationType" factoryName="Python">
+      <module name="Dibyo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\WinPython-32bit-2.7.10.3\python-2.7.10\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/editor" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/editor/editor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Main 7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Dibyo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -215,14 +269,72 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\WinPython-32bit-2.7.10.3\workspace\Dibyo\Main 7.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main 7.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration default="false" name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Dibyo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Dibyo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main 5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="MainPage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Dibyo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainPage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Dibyo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -233,116 +345,12 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <module name="Dibyo" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -364,128 +372,34 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
       <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Editor" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\WinPython-32bit-2.7.10.3\python-2.7.10\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/editor" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Dibyo" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/editor/editor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Python.Editor" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Main" />
-      <item index="2" class="java.lang.String" itemvalue="Python.server" />
+    <list>
+      <item itemvalue="Python.Editor" />
+      <item itemvalue="Python.Main" />
+      <item itemvalue="Python.server" />
+      <item itemvalue="Python.Main 7" />
+      <item itemvalue="Python.Main (1)" />
+      <item itemvalue="Python.MainPage" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.server" />
+      <list>
+        <item itemvalue="Python.server" />
+        <item itemvalue="Python.MainPage" />
+        <item itemvalue="Python.Main 7" />
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Main (1)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -550,31 +464,41 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
+    <frame x="-6" y="0" width="985" height="946" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47783783" sideWeight="0.6234375" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47783783" sideWeight="0.3765625" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756758" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5199568" side_tool="true" visible="true" weight="0.33165196" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48004314" visible="true" weight="0.33165196" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37432578" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24895833" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.3629935" weight="0.47630924" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19791667" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49375" weight="0.32864866" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.3796875" visible="true" weight="0.4172973" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.6203125" side_tool="true" visible="true" weight="0.4172973" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49791667" weight="0.32756758" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -600,30 +524,60 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="145" />
+      <option name="time" value="154" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/WelcomePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InstructionPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreferencePage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/site-packages/wx-3.0-msw/wx/_windows.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="580" column="30" lean-forward="true" selection-start-line="580" selection-start-column="30" selection-end-line="580" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instruction/END.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/results/.csv" />
     <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/SocketServer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="236" column="0" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/BaseHTTPServer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
-          <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
+          <caret line="339" selection-start-line="339" selection-end-line="339" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/rfc822.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
-          <caret line="296" column="0" lean-forward="false" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+          <caret line="296" selection-start-line="296" selection-end-line="296" />
         </state>
       </provider>
     </entry>
@@ -641,12 +595,26 @@
     <entry file="file://$PROJECT_DIR$/ftp/pisang_PS-03.csv" />
     <entry file="file://$PROJECT_DIR$/ftp/pisang_PS-02.csv" />
     <entry file="file://$PROJECT_DIR$/ftp/pisang_PS-01.csv" />
+    <entry file="file://$PROJECT_DIR$/InstructionPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="46" column="75" lean-forward="true" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EndPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ftp/kelapa_PS-Demo.csv" />
     <entry file="file://$PROJECT_DIR$/ftp/kelapa_PS-01.csv" />
     <entry file="file://$PROJECT_DIR$/client.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="true" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        <state>
+          <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -661,7 +629,7 @@
     <entry file="file://$PROJECT_DIR$/SubjectNumberPage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
-          <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+          <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -688,19 +656,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results/result.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/results/1212313.csv" />
     <entry file="file://$PROJECT_DIR$/ftp/123.csv" />
     <entry file="file://$PROJECT_DIR$/ftp/1212313.csv" />
+    <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/site-packages/wx-3.0-msw/wx/_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3539">
+          <caret line="7953" column="30" lean-forward="true" selection-start-line="7953" selection-start-column="30" selection-end-line="7953" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
@@ -708,184 +679,107 @@
     <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/site-packages/wx-3.0-msw/wx/richtext.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2171">
-          <caret line="4437" column="0" lean-forward="false" selection-start-line="4437" selection-start-column="0" selection-end-line="4437" selection-end-column="0" />
+          <caret line="4437" selection-start-line="4437" selection-end-line="4437" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ftp/123456789.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/MyUtil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instruction/PreferenceSheetInstruction.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
-          <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+          <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instruction/PreferenceSheetInstruction-v3p3.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-210" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sheets/Lottery.original.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sheets/Lottery.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testvideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/site-packages/wx/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="2098" selection-start-line="2098" selection-end-line="2098" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main 5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="49" column="111" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="49" selection-end-column="111" />
+        <state relative-caret-position="257">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
           <folding>
             <element signature="e#127#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main-3 columns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sheets/Lottery.original.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/subject111.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PreferencePage5columns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="205" column="72" lean-forward="true" selection-start-line="187" selection-start-column="12" selection-end-line="205" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sheets/Lottery.backup.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sheets/Lottery.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/site-packages/wx-3.0-msw/wx/_core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="7966" column="28" lean-forward="true" selection-start-line="7966" selection-start-column="28" selection-end-line="7966" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/subject444.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey_qt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python-2.7.10/Lib/site-packages/wx-3.0-msw/wx/grid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="2015" column="0" lean-forward="false" selection-start-line="2015" selection-start-column="0" selection-end-line="2015" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InstructionPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EndPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/subject9999.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="307" lean-forward="false" selection-start-line="1" selection-start-column="307" selection-end-line="1" selection-end-column="307" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main 7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/subject898989.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="1" lean-forward="true" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="252">
+          <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PreferencePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="-801">
+          <caret line="281" selection-start-line="281" selection-end-line="281" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ftp/7777.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
         </state>
       </provider>
     </entry>

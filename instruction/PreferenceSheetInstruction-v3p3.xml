@@ -12,21 +12,19 @@
       <text fontweight="92">"(Option A) "</text>
       <text fontweight="90">"or a lottery "</text>
       <text fontweight="92">(Option B)</text>
-      <text fontweight="90">". There are 5 (five) answer options to represent your preference: i) "</text>
-      <text fontweight="92">"I'm sure I prefer Option A; "</text>
+      <text fontweight="90">". There are 3 (three) answer options to represent your preference: i) "</text>
+      <text fontweight="92">"I choose Option A; "</text>
       <text fontweight="90">"ii) "</text>
-      <text fontweight="92">I think I prefer Option A but I'm not sure;</text>
+      <text fontweight="92">I am not sure what to choose;</text>
       <text fontweight="90">" iii) "</text>
-      <text fontweight="92">I'm indifferent between Option A and Option B;</text>
-      <text fontweight="90">" iv) "</text>
-      <text fontweight="92">"I think I prefer Option B but I'm not sure; "</text>
-      <text fontweight="90">"v) "</text>
-      <text fontweight="92">"I'm sure I prefer Option B. "</text>
+      <text fontweight="92">"I choose Option B. "</text>
       <text fontweight="90">"Should you click "</text>
       <text fontweight="92">CONFIRM</text>
       <text fontweight="90">" once you have finished completing this Preference Sheet, otherwise click "</text>
       <text fontweight="92">"CLEAR "</text>
-      <text fontweight="90">to modify your answer.</text>
+      <text fontweight="90">"to modify your answer. The "</text>
+      <text fontweight="92">"CONFIRM "</text>
+      <text fontweight="90">button will appear after 1 minute. Please notice that you cannot go back to the previous Preference Sheet.</text>
     </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
       <text></text>
