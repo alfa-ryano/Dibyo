@@ -9,7 +9,8 @@ from StringIO import StringIO
 from threading import Timer
 
 COL_HEADER = 0
-NUM_OF_COLS = 3 #for now it can create 3 or 5 columns
+NUM_OF_COLS = 3  # for now it can create 3 or 5 columns
+
 
 class PreferencePage(wx.Frame):
     TYPE_EXAMPLE = 0
@@ -47,10 +48,14 @@ class PreferencePage(wx.Frame):
         self.topRow = 0
         self.bottomRow = 0
 
+        self.lastSelectedColumn = 0
+
         self.duration = 10  # Timer duration for the 'CONFIRM' button in seconds
         self.isBlankCellExists = True  # the cell is still blank
         self.timerActive = False  # 'FALSE' if the timer is active; 'TRUE' if the timer is inactive
-        self.Bind(wx.EVT_SHOW, self.pageShow)
+        # self.Bind(wx.EVT_SHOW, self.pageShow)
+
+        self.payoff = 0.00
 
     def initUI(self):  # define a panel for the preference page
 
@@ -83,7 +88,7 @@ class PreferencePage(wx.Frame):
         if (p1 == -1 or p1 == 0) and (p2 == -1 or p2 == 0) and (p3 != -1 and p3 != 0):
             text = text.replace("[var1]", ('%.2f' % self.v3))
             text = text.replace("[pro1]", ('%.2f' % self.p3))
-        elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 == -1  or p3 == 0):
+        elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 == -1 or p3 == 0):
             text = text.replace("[var1]", ('%.2f' % self.v2))
             text = text.replace("[pro1]", ('%.2f' % self.p2))
         elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 != -1 and p3 != 0):
@@ -160,10 +165,10 @@ class PreferencePage(wx.Frame):
             bottomValue = v2
         if v3 < bottomValue and v3 != -1:
             bottomValue = v3
-        
+
         while topValue >= bottomValue:
             grid.AppendRows(1)
-            grid.SetCellValue(row, col,  "For " + unichr(163) + ('%.2f' % topValue))
+            grid.SetCellValue(row, col, "For " + unichr(163) + ('%.2f' % topValue))
             grid.SetCellFont(row, col, wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
             grid.SetCellBackgroundColour(row, col, wx.Colour(240, 240, 240))
             grid.SetCellAlignment(row, col, wx.ALIGN_CENTRE, wx.ALIGN_TOP)
@@ -173,7 +178,30 @@ class PreferencePage(wx.Frame):
         grid.EnableEditing(False)
         grid.Bind(gr.EVT_GRID_SELECT_CELL, self.OnCellSelect)
 
-        hbox2.Add(grid, flag=wx.GROW | wx.ALL, proportion=1)
+        # add payoff number section
+        vboxPayoff = wx.BoxSizer(wx.VERTICAL)
+        fontPayoff = wx.Font(16, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.BOLD)
+        labelPayoff = wx.StaticText(panel, label="Insert the amount of money (in " + unichr(163) +
+                                                 ")\n"
+                                                 "at which you are willing to switch\n"
+                                                 "from being sure you prefer Option B\n"
+                                                 "to being sure you prefer "
+                                                 "Option A.")
+        labelPayoff.SetFont(fontPayoff)
+        self.spinPayoff = wx.SpinCtrlDouble(panel, size=(200, -1), style=wx.TE_CENTRE)
+        self.spinPayoff.SetFont(fontPayoff)
+        self.spinPayoff.SetDigits(2)
+        self.spinPayoff.SetValue(0.00)
+        self.spinPayoff.SetIncrement(0.01)
+        self.spinPayoff.Bind(wx.EVT_SPINCTRLDOUBLE, self.OnSpinPayoffValueChanged)
+
+        vboxPayoff.Add(labelPayoff, border=10)
+        vboxPayoff.AddSpacer(10)
+        vboxPayoff.Add(self.spinPayoff, border=10)
+
+        hbox2.Add(grid, flag=wx.GROW | wx.ALL, proportion=3)
+        hbox2.AddSpacer(10)
+        hbox2.Add(vboxPayoff, flag=wx.FIXED_MINSIZE, proportion=1)
         vbox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM,
                  border=10, proportion=1)
 
@@ -291,11 +319,11 @@ class PreferencePage(wx.Frame):
                 for row in range(15, 31, 1):
                     grid.SetCellValue(row, 2, "")
                     grid.SetCellBackgroundColour(row, 2, self.selectedColor)
-                    
+
                 for row in range(31, 39, 1):
                     grid.SetCellValue(row, 1, "")
                     grid.SetCellBackgroundColour(row, 1, self.selectedColor)
-                    
+
                 for row in range(39, 49, 1):
                     grid.SetCellValue(row, 2, "")
                     grid.SetCellBackgroundColour(row, 2, self.selectedColor)
@@ -381,6 +409,36 @@ class PreferencePage(wx.Frame):
         grid.DisableDragColSize()
         grid.DisableDragRowSize()
 
+    def OnSpinPayoffValueChanged(self, event):
+        self.payoff = self.spinPayoff.GetValue()
+        grid = self.grid
+
+        # Check whether blank cell exists or not
+        if self.spinPayoff.GetValue() > 0:
+            self.isBlankCellExists = False
+            for row in range(0, grid.GetNumberRows(), 1):
+                for col in range(1, grid.GetNumberCols(), 1):
+                    cellColor = grid.GetCellBackgroundColour(row, col)
+                    if cellColor.GetRGBA() == self.blankColor.GetRGBA():
+                        self.isBlankCellExists = True
+                        break
+                if self.isBlankCellExists:
+                    break
+            if self.isBlankCellExists:
+                self.buttonConfirm.Disable()
+                self.buttonCon.Disable()
+            else:
+                if self.timerActive == False:
+                    if self.spinPayoff.GetValue() > 0:
+                        self.buttonConfirm.Enable()
+                        self.buttonCon.Enable()
+                else:
+                    self.buttonConfirm.Disable()
+                    self.buttonCon.Disable()
+        else:
+            self.buttonConfirm.Disable()
+            self.buttonCon.Disable()
+
     def OnButtonNextClick(self, event):
         self.application.NextPage()
 
@@ -395,6 +453,7 @@ class PreferencePage(wx.Frame):
                 self.application.NextPage()
 
     def OnButtonClearCLick(self, event):
+        self.lastSelectedColumn = 0
         grid = self.grid
         for row in range(0, grid.GetNumberRows(), 1):
             for col in range(1, grid.GetNumberCols(), 1):
@@ -418,6 +477,26 @@ class PreferencePage(wx.Frame):
         if event.GetCol() == 0:
             return
 
+        # prevent selecting other cells except selecting the top left cell first
+        topLeftCellColour = grid.GetCellBackgroundColour(0, 1)
+        if (row > 0 or col > 1) and topLeftCellColour.GetRGBA() == self.blankColor.GetRGBA():
+            return
+
+        # force users to select middle and right cells and prevent users to select back the left cells if middle
+        # and right cells already selected
+        elif col > self.lastSelectedColumn + 1:
+            return
+
+        if col > self.lastSelectedColumn:
+            self.lastSelectedColumn = col
+
+        if col < self.lastSelectedColumn:
+            return
+        elif col == 1 and (row >= grid.GetNumberRows() - 2):
+            return
+        elif col == 2 and (row >= grid.GetNumberRows() - 1):
+            return
+
         # No response if a user clicks on inactive cells
         selectedGridColor = grid.GetCellBackgroundColour(row, col)
         if selectedGridColor.GetRGBA() == self.inactiveColor.GetRGBA():
@@ -436,7 +515,7 @@ class PreferencePage(wx.Frame):
                 grid.SetCellValue(r, col, "")
                 grid.SetCellBackgroundColour(r, c, self.inactiveColor)
 
-        ### Uncomment these following codes to disable selecting remaining left 
+        ### Uncomment these following codes to disable selecting remaining left
         ### bottom cells once the left cells are already selected
         # # left bottom side inactive cells
         # for r in range(self.bottomRow, grid.GetNumberRows(), 1):
@@ -464,8 +543,9 @@ class PreferencePage(wx.Frame):
             self.buttonCon.Disable()
         else:
             if self.timerActive == False:
-                self.buttonConfirm.Enable()
-                self.buttonCon.Enable()
+                if self.spinPayoff.GetValue() > 0:
+                    self.buttonConfirm.Enable()
+                    self.buttonCon.Enable()
             else:
                 self.buttonConfirm.Disable()
                 self.buttonCon.Disable()
@@ -484,6 +564,7 @@ class PreferencePage(wx.Frame):
             data = []
             for preferenceSheet in preferenceSheetList:
                 row = [str(preferenceSheetNumber)]
+                row.append(str(preferenceSheet.payoff))
                 grid = preferenceSheet.grid
 
                 for gridRow in range(0, grid.GetNumberRows(), 1):
