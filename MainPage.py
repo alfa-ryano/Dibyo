@@ -15,33 +15,34 @@ from InstructionPage import InstructionPage
 from EndPage import EndPage
 from MyUtil import isfloat
 
+
 class Application():
     def __init__(self, mainProcess):
         self.mainProcess = mainProcess
         self.pageList = []
         self.currentPage = 0
         self.subjectNumber = ""
-        
-        # # These are the screens of the experiment. It is ordered as explained in its lists
-        self.pageList.append(SubjectNumberPage(None, self))     # write down the subject number
-        # self.pageList.append(WelcomePage(None, self))           # nothing fancy. Just click continue
-        # self.pageList.append(InstructionPage(None, self, "instruction/Instruction1.xml", InstructionPage.WITHOUT_PREV_BUTTON))
-        # self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-        #                                     PreferencePage.TYPE_EXAMPLE, 0, 30, 0.65, 15, 0.35, -1, -1))
-        # self.pageList.append(InstructionPage(None, self, "instruction/Instruction2a.xml"))
-        # self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-        #                                     PreferencePage.TYPE_DEMO, 0, 30, 0.65, 15, 0.35, -1, -1))
-        # self.pageList.append(InstructionPage(None, self, "instruction/Instruction2b.xml"))
-        # self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-        #                                     PreferencePage.TYPE_DEMO2, 0, 30, 0.65, 15, 0.35, -1, -1))
-        # self.pageList.append(InstructionPage(None, self, "instruction/Instruction3.xml", InstructionPage.PAYMENT))
-        ## These are practice session 1 and 2
-        # self.pageList.append(PreferencePage(None, self, "instruction/Practice1.xml",
-        #                                     PreferencePage.TYPE_PRACTICE, 0, 30, 0.65, 15, 0.35, -1, -1))
-        # self.pageList.append(PreferencePage(None, self, "instruction/Practice2.xml",
-        #                                     PreferencePage.TYPE_PRACTICE, 0, 35, 0.5, 20, 0.5, -1, -1))
-        # self.pageList.append(InstructionPage(None, self, "instruction/Instruction4.xml", InstructionPage.LAST))
 
+        # These are the screens of the experiment. It is ordered as explained in its lists
+        self.pageList.append(SubjectNumberPage(None, self))  # write down the subject number
+        self.pageList.append(WelcomePage(None, self))  # nothing fancy. Just click continue
+        self.pageList.append(
+            InstructionPage(None, self, "instruction/Instruction1.xml", InstructionPage.WITHOUT_PREV_BUTTON))
+        self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
+                                            PreferencePage.TYPE_EXAMPLE, 0, 30, 0.65, 15, 0.35, -1, -1))
+        self.pageList.append(InstructionPage(None, self, "instruction/Instruction2a.xml"))
+        self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
+                                            PreferencePage.TYPE_DEMO, 0, 30, 0.65, 15, 0.35, -1, -1))
+        self.pageList.append(InstructionPage(None, self, "instruction/Instruction2b.xml"))
+        self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
+                                            PreferencePage.TYPE_DEMO2, 0, 30, 0.65, 15, 0.35, -1, -1))
+        self.pageList.append(InstructionPage(None, self, "instruction/Instruction3.xml", InstructionPage.PAYMENT))
+        # These are practice session 1 and 2
+        self.pageList.append(PreferencePage(None, self, "instruction/Practice1.xml",
+                                            PreferencePage.TYPE_PRACTICE, 0, 30, 0.65, 15, 0.35, -1, -1))
+        self.pageList.append(PreferencePage(None, self, "instruction/Practice2.xml",
+                                            PreferencePage.TYPE_PRACTICE, 0, 35, 0.5, 20, 0.5, -1, -1))
+        self.pageList.append(InstructionPage(None, self, "instruction/Instruction4.xml", InstructionPage.LAST))
 
         csvPath = os.path.abspath("sheets/Lottery.csv")
         csvfile = open(csvPath, 'rb')
@@ -68,7 +69,7 @@ class Application():
                 instructionFile = "instruction/PreferenceSheetInstruction-Empty.xml"
             elif (p1 == -1 or p1 == 0) and (p2 == -1 or p2 == 0) and (p3 != -1 and p3 != 0):
                 instructionFile = "instruction/PreferenceSheetInstruction-One.xml"
-            elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 == -1  or p3 == 0):
+            elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 == -1 or p3 == 0):
                 instructionFile = "instruction/PreferenceSheetInstruction-One.xml"
             elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 != -1 and p3 != 0):
                 instructionFile = "instruction/PreferenceSheetInstruction-Two.xml"
@@ -82,7 +83,7 @@ class Application():
                 instructionFile = "instruction/PreferenceSheetInstruction-Three.xml"
 
             self.pageList.append(PreferencePage(None, self, instructionFile,
-                                                type , pn, v1, p1, v2, p2, v3, p3))
+                                                type, pn, v1, p1, v2, p2, v3, p3))
             i += 1
         csvfile.close()
         self.pageList.append(EndPage(None, self, "instruction/END.xml"))
@@ -111,6 +112,7 @@ class Application():
         for page in self.pageList:
             page.Hide()
             page.Close(True)
+
 
 app = wx.App(False)
 Application(app).Start()
