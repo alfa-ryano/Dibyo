@@ -11,54 +11,6 @@ from threading import Timer
 COL_HEADER = 0
 NUM_OF_COLS = 3 #for now it can create 3 or 5 columns
 
-## This creates dialog box for the subjects to input their CE
-class CertaintyEquivalentDialog(wx.Dialog):
-    def __init__(self, parent, id):
-        wx.Dialog.__init__(self, parent, id,  style=wx.CAPTION)
-    
-        self.parent = parent
-        #elements setup
-        self.Description = wx.StaticText(self,  -1,  u'Please enter your valuation on the lottery',  (10, 10))
-        self.CE = wx.TextCtrl(self, -1, u'', style = wx.ALIGN_LEFT)
-        self.Description.SetFont(wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.NORMAL, 0, ""))
-        #self.Description.SetFont(wx.Font(12, wx.DEFAULT, wx.NORMAL, 0, ""))        
-        self.SubmitButton = wx.Button(self, -1, u'OK', size = (120, 30))
-        self.CancelButton = wx.Button(self, -1, u'Cancel', size = (120, 30))
-        
-        self.SubmitButton.Bind(wx.EVT_BUTTON, self.OnSubmit)
-        self.CancelButton.Bind(wx.EVT_BUTTON, self.OnCancel)
-        
-        self.__do_layout()
-        
-    def __do_layout(self):
-#        panel = wx.Panel(self, -1)
-        vbox = wx.BoxSizer(wx.VERTICAL)
-        hbox1 = wx.BoxSizer(wx.HORIZONTAL)
-        hbox1.Add(self.Description,  wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.LEFT|wx.RIGHT,  20)
-        hbox2 = wx.BoxSizer(wx.HORIZONTAL)
-        hbox2.Add(self.SubmitButton, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.LEFT|wx.RIGHT,  20)
-        hbox2.Add(self.CancelButton, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.LEFT|wx.RIGHT,  20)
-#        vbox.Add(panel)
-        vbox.Add(hbox1, 0, wx.ALIGN_CENTER | wx.ALL, 50)
-        vbox.Add(self.CE,1,wx.ALIGN_CENTER | wx.ALL, 10)
-        vbox.Add(hbox2, 1, wx.ALIGN_CENTER | wx.ALL, 10)
-        self.SetSizer(vbox)
-        self.Fit()
-
-    def OnSubmit(self, event):
-        try: 
-            a = float(self.CE.GetValue())
-            if a:
-                self.parent.CE = a
-                self.parent.ActionCanceled = 0
-                self.Destroy()
-        except:
-            wx.MessageDialog(self, u'Make sure you have entered a number!', u'Not a number',  wx.OK|wx.LEFT|wx.ICON_EXCLAMATION).ShowModal()
-            
-    def OnCancel(self, event):
-        self.parent.ActionCanceled = 1
-        self.Destroy
-
 class PreferencePage(wx.Frame):
     TYPE_EXAMPLE = 0
     TYPE_DEMO = 1
@@ -102,8 +54,8 @@ class PreferencePage(wx.Frame):
 
     def initUI(self):  # define a panel for the preference page
 
-        decrement = 0.50
-        v1, v2, p1, p2, v3, p3 = self.v1, self.v2, self.p1, self.p2, self.v3, self.p3
+        decrement = 0.25
+        v1, v2, p1, p2, pn, v3, p3 = self.v1, self.v2, self.p1, self.p2, self.pn, self.v3, self.p3
         row, col = 0, 0
 
         panel = wx.Panel(self)
@@ -183,19 +135,19 @@ class PreferencePage(wx.Frame):
         if NUM_OF_COLS == 3:
             grid.AppendCols(4)
 
-            grid.SetColLabelValue(0, "Proposed Certain\n Amount")
-            grid.SetColLabelValue(1, "I am sure I prefer\n the certain amount (Option A)")
-            grid.SetColLabelValue(2, "I am not sure about\n my preference")
-            grid.SetColLabelValue(3, "I am sure I prefer\n the lottery (Option B)")
+            grid.SetColLabelValue(0, "Proposed Certain\n Money")
+            grid.SetColLabelValue(1, "I choose Option A")
+            grid.SetColLabelValue(2, "I am not sure what to choose")
+            grid.SetColLabelValue(3, "I choose Option B")
 
         elif NUM_OF_COLS == 5:
             grid.AppendCols(6)
-            grid.SetColLabelValue(0, "Proposed Certain\n Amount")
-            grid.SetColLabelValue(1, "I am sure I prefer\n the certain amount (Option A)")
+            grid.SetColLabelValue(0, "Proposed Certain\n Money")
+            grid.SetColLabelValue(1, "I choose Option A")
             grid.SetColLabelValue(2, "I think I prefer Option A\nbut I'm not sure")
-            grid.SetColLabelValue(3, "I am not sure about\n my preference")
+            grid.SetColLabelValue(3, "I am not sure what to choose")
             grid.SetColLabelValue(4, "I think I prefer Option B\nbut I'm not sure")
-            grid.SetColLabelValue(5, "I am sure I prefer\n the lottery (Option B)")
+            grid.SetColLabelValue(5, "I choose Option B")
 
         topValue = v1
         if v2 > topValue:
@@ -211,7 +163,7 @@ class PreferencePage(wx.Frame):
         
         while topValue >= bottomValue:
             grid.AppendRows(1)
-            grid.SetCellValue(row, col, "For " + unichr(163)  + ('%.2f' % topValue))
+            grid.SetCellValue(row, col,  "For " + unichr(163) + ('%.2f' % topValue))
             grid.SetCellFont(row, col, wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
             grid.SetCellBackgroundColour(row, col, wx.Colour(240, 240, 240))
             grid.SetCellAlignment(row, col, wx.ALIGN_CENTRE, wx.ALIGN_TOP)
@@ -375,14 +327,14 @@ class PreferencePage(wx.Frame):
 
         elif self.type == self.TYPE_PRACTICE:
             centerBox = wx.BoxSizer(wx.VERTICAL)
-            centerBox.Add(self.buttonConfirm, flag=wx.EXPAND | wx.ALIGN_CENTER)
+            centerBox.Add(self.buttonCon, flag=wx.EXPAND | wx.ALIGN_CENTER)
             hbox3.Add(centerBox, flag=wx.ALIGN_CENTRE, proportion=1)
             rightBox = wx.BoxSizer(wx.VERTICAL)
             rightBox.Add(buttonClear, flag=wx.ALIGN_RIGHT)
             hbox3.Add(rightBox, flag=wx.ALIGN_RIGHT)
             buttonNext.Hide()
             buttonPrev.Hide()
-            self.buttonCon.Hide()
+            self.buttonConfirm.Hide()
 
         elif self.type == self.TYPE_REAL:
             centerBox = wx.BoxSizer(wx.VERTICAL)
@@ -435,26 +387,12 @@ class PreferencePage(wx.Frame):
     def OnButtonPrevClick(self, event):
         self.application.PrevPage()
 
-    # this sets what the CONFIRM button does
     def OnButtonConfirmClick(self, event):
-        self.CE = 0
-        # call CE dialog
-        dlg = CertaintyEquivalentDialog(self, -1)
-        dlg.ShowModal()
-            
-        if self.ActionCanceled:
-            self.CE_value = 0
-        else:
-            # get the CE value
-            self.CE_value = self.CE
-            # what's next for OK button in the dialog
-            if self.type == self.TYPE_PRACTICE:
+        if self.type == self.TYPE_REAL:
+            self.application.NextPage()
+        elif self.type == self.TYPE_REAL_FINAL:
+            if self.SubmitDataToServer():
                 self.application.NextPage()
-            elif self.type == self.TYPE_REAL:
-                self.application.NextPage()
-            elif self.type == self.TYPE_REAL_FINAL:
-                if self.SubmitDataToServer():
-                    self.application.NextPage()
 
     def OnButtonClearCLick(self, event):
         grid = self.grid
@@ -498,13 +436,13 @@ class PreferencePage(wx.Frame):
                 grid.SetCellValue(r, col, "")
                 grid.SetCellBackgroundColour(r, c, self.inactiveColor)
 
-        ## Uncomment these following codes to disable selecting remaining left 
-        ## bottom cells once the left cells are already selected
-        # left bottom side inactive cells
-        for r in range(self.bottomRow, grid.GetNumberRows(), 1):
-            for c in range(1, col, 1):
-                grid.SetCellValue(r, col, "")
-                grid.SetCellBackgroundColour(r, c, self.inactiveColor)
+        ### Uncomment these following codes to disable selecting remaining left 
+        ### bottom cells once the left cells are already selected
+        # # left bottom side inactive cells
+        # for r in range(self.bottomRow, grid.GetNumberRows(), 1):
+        #     for c in range(1, col, 1):
+        #         grid.SetCellValue(r, col, "")
+        #         grid.SetCellBackgroundColour(r, c, self.inactiveColor)
 
         # Set color to selected cells
         for r in range(self.topRow, self.bottomRow + 1, 1):

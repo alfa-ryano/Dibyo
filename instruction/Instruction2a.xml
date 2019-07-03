@@ -2,13 +2,74 @@
 <richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
   <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
     <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
-      <text fontweight="90" fontunderlined="0"></text>
+      <text fontpointsize="16" fontweight="90" fontunderlined="0" fontface="Arial">"If, for example, "</text>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">you think that your preferences for the Preference Sheet are as follow:</text>
     </paragraph>
     <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
       <text fontweight="90" fontunderlined="0"></text>
     </paragraph>
-    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial" alignment="2">
-      <text fontweight="90" fontunderlined="0">---------------- Instructions are here -----------------</text>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">a.</text>
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">"You are surely prefer "</text>
+      <text fontweight="92" fontunderlined="0">Option A</text>
+      <text fontweight="90" fontunderlined="0">" over "</text>
+      <text fontweight="92" fontunderlined="0">Option B</text>
+      <text fontweight="90" fontunderlined="0">" for the proposed certain money of &#163;30.00 to &#163;25.00."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">b.</text>
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">"You are not sure which to choose between "</text>
+      <text fontweight="92" fontunderlined="0">Option A</text>
+      <text fontweight="90" fontunderlined="0">" and "</text>
+      <text fontweight="92" fontunderlined="0">Option B</text>
+      <text fontweight="90" fontunderlined="0">" for the proposed certain money of &#163;24.75 to &#163;21.50."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">c.</text>
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">"You are surely prefer "</text>
+      <text fontweight="92" fontunderlined="0">Option B</text>
+      <text fontweight="90" fontunderlined="0">" over "</text>
+      <text fontweight="92" fontunderlined="0">Option A</text>
+      <text fontweight="90" fontunderlined="0">" for the proposed certain money of &#163;21.25 to &#163;15.00."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontweight="90" fontunderlined="0"></text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontweight="90" fontunderlined="0">Following these answer to state your preference, should you:</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">a.</text>
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">"Block the third column "</text>
+      <text fontweight="92" fontunderlined="0">(I choose Option A)</text>
+      <text fontweight="90" fontunderlined="0">" in the row of &#8216;For &#163;25.00&#8217; by clicking it using your mouse."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">b.</text>
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">"Block the fourth column "</text>
+      <text fontweight="92" fontunderlined="0">(I am not sure what to choose)</text>
+      <text fontweight="90" fontunderlined="0">" in the row of &#8216;For &#163;21.50&#8217; by clicking it using your mouse."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">c.</text>
+      <symbol fontweight="90" fontunderlined="0">9</symbol>
+      <text fontweight="90" fontunderlined="0">"Block the fifth column "</text>
+      <text fontweight="92" fontunderlined="0">(I choose Option B)</text>
+      <text fontweight="90" fontunderlined="0">" in the row of &#8216;For &#163;15.00&#8217; by clicking it using your mouse."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontweight="90" fontunderlined="0"></text>
     </paragraph>
   </paragraphlayout>
 </richtext>

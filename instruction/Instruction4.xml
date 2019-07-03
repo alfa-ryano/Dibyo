@@ -1,20 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
   <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+    <paragraph fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontpointsize="19" fontweight="92" fontunderlined="1" fontface="Arial">How Long Will the Experiment Last?</text>
+    </paragraph>
+    <paragraph fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontpointsize="19" fontweight="90" fontunderlined="0" fontface="Arial">It is important for you to consider the problems carefully because your answers determine how much you can earn from this experiment. Hence we impose a minimum time of 10 seconds for you to respond on each preference sheet. This means that you can go on to the next preference sheet after 10 seconds providing that you have answered all pairwise choices in that sheet. There is no maximum time to complete each preference sheet but you still have to complete all pairwise choices to go on to the next preference sheet. Please notice that you cannot go back to the previous preference sheets.</text>
+    </paragraph>
+    <paragraph fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontweight="90" fontunderlined="0"></text>
+    </paragraph>
+    <paragraph fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontpointsize="19" fontweight="90" fontunderlined="0" fontface="Arial">We estimate that the experiment will take at least 45 minutes of your time. You can take longer and it is clearly up to your interests to be as careful as you can when you are answering the questions.</text>
+    </paragraph>
+    <paragraph fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">
+      <text fontpointsize="19" fontweight="92" fontunderlined="1" fontface="Arial"></text>
+    </paragraph>
+    <paragraph>
+      <text fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">What to do next?</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">"After you have read and understood these instruction (both paper and paperless), please click "</text>
+      <text fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">GO TO THE EXPERIMENT</text>
+      <text fontpointsize="19" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">" on the right bottom of your computer screen. If you still have any doubts about this experiment, please raise your hand up and the experimenter will come to you."</text>
+    </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
       <text fontpointsize="19"></text>
     </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <text fontpointsize="19" fontweight="92" fontunderlined="1"></text>
+      <text fontpointsize="19"></text>
     </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <text fontpointsize="19" fontweight="92" fontunderlined="1"></text>
+      <text fontpointsize="19"></text>
     </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <text fontpointsize="19" fontweight="92" fontunderlined="1"></text>
+      <text fontpointsize="19"></text>
     </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial" alignment="2">
-      <text fontpointsize="19" fontweight="90" fontunderlined="0">------------- Instructions are here -------------</text>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="19">Yudistira Permana</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="19">October 2017</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="19"></text>
     </paragraph>
   </paragraphlayout>
 </richtext>

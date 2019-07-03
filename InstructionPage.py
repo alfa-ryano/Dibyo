@@ -1,6 +1,8 @@
 import wx
 import wx.richtext as rt
 import os
+from PreferencePage import PreferencePage
+
 
 class InstructionPage(wx.Frame):
     WITHOUT_PREV_BUTTON = 0

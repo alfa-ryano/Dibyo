@@ -64,8 +64,8 @@ class VideoPage(wx.Frame):
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonPrevClick)
         boxPrev.Add(buttonPrev, flag=wx.ALIGN_LEFT)
         
-        boxConfirm = wx.BoxSized(wx.VERTICAL)
-        buttonConfirm = wx.BUtton(panel, label = "GO TO PROBLEMS")
+        boxConfirm = wx.BoxSizer(wx.VERTICAL)
+        buttonConfirm = wx.Button(panel, label = "GO TO PROBLEMS")
         buttonConfirm.SetFont(font)
         buttonPrev.Bind(wx.EVT_BUTTON, self.OnButtonConfirmClick)
         boxConfirm.Add(buttonVideo, flag = wx.ALIGN_CENTRE)        

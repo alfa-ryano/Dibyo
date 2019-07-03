@@ -1,5 +1,7 @@
 """
-
+This is version 9 for imprecise preference
+Modified on 22/06/17
+This version imports files from directory Imprecise 9
 """
 
 import wx
@@ -12,14 +14,8 @@ from PreferencePage import PreferencePage
 from InstructionPage import InstructionPage
 from EndPage import EndPage
 from MyUtil import isfloat
-from GuessNumberPage import InputNumberDialog
-from VideoPage import VideoPage
-
 
 class Application():
-    INDEX_FORM_TYPE = 0
-    INDEX_FORM_TITLE = 1
-    
     def __init__(self, mainProcess):
         self.mainProcess = mainProcess
         self.pageList = []
@@ -34,19 +30,17 @@ class Application():
                                             PreferencePage.TYPE_EXAMPLE, 0, 30, 0.65, 15, 0.35, -1, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction2a.xml"))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_DEMO, 0, 40, 0.65, 15, 0.35, -1, -1))
+                                            PreferencePage.TYPE_DEMO, 0, 30, 0.65, 15, 0.35, -1, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction2b.xml"))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_DEMO2, 0, 50, 0.65, 15, 0.35, -1, -1))
+                                            PreferencePage.TYPE_DEMO2, 0, 30, 0.65, 15, 0.35, -1, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction3.xml", InstructionPage.PAYMENT))
-        ## Open the video page
-        self.pageList.append(InstructionPage(None, self, "instruction/Instruction4.xml", VideoPage.WITH_PREV_BUTTON))
         ## These are practice session 1 and 2
         self.pageList.append(PreferencePage(None, self, "instruction/Practice1.xml",
                                             PreferencePage.TYPE_PRACTICE, 0, 30, 0.65, 15, 0.35, -1, -1))
         self.pageList.append(PreferencePage(None, self, "instruction/Practice2.xml",
                                             PreferencePage.TYPE_PRACTICE, 0, 35, 0.5, 20, 0.5, -1, -1))
-        self.pageList.append(InstructionPage(None, self, "instruction/Instruction5.xml", InstructionPage.LAST))
+        self.pageList.append(InstructionPage(None, self, "instruction/Instruction4.xml", InstructionPage.LAST))
 
 
         csvPath = os.path.abspath("sheets/Lottery.csv")

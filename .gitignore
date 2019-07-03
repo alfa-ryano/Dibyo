@@ -53,3 +53,7 @@ ftp/
 results/
 log_client.txt
 log_server.txt
+*.pyc
+*.docx
+instruction/*.jpg
+instruction/*.pdf

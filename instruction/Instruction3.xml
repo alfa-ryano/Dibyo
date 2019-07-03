@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
   <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+    <paragraph>
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="92" fontunderlined="1" fontface="Arial">Payment</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">Your payment for participating in this experiment will be determined by your responses during the experiment plus a show-up fee of &#163;2.50. There is no participation fee in this experiment. What you have done is what you will be paid with. The row in a preference sheet will be a basis of your payment. To determine the number of the preference sheet, you will be presented a closed bag containing the numbered disks from 1 to 72, each indicating the number of a preference sheet and is in integer number. Then you draw a disk by yourself. After that, once again, you will be presented a closed bag containing numbered disks depending on how many rows there are in the chosen preference sheet. You pick a disk from the bag to determine which row in the chosen preference sheet is to be played for real. After you have got the row as your basis of your payment, these following rules are used to determine your payment:</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text></text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text>"      -     If, on the chosen row, your answer is "</text>
+      <symbol fontweight="92">34</symbol>
+      <text fontweight="92">I choose Option A</text>
+      <symbol fontweight="92">34</symbol>
+      <text fontweight="92">" "</text>
+      <text fontweight="90">then you will get paid the certain amount of money.</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text></text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text>"      -     If, on the chosen row, your answer is "</text>
+      <symbol fontweight="92">34</symbol>
+      <text fontweight="92">I choose Option B</text>
+      <symbol fontweight="92">34</symbol>
+      <text fontweight="92">" "</text>
+      <text fontweight="90">"then you will play out the lottery for real, being paid one of the "</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">"            outcomes in the lottery."</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text></text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text>"      -     If, on the chosen row, your answer is "</text>
+      <symbol fontweight="92">34</symbol>
+      <text fontweight="92">I am not sure what to choose</text>
+      <symbol fontweight="92">34</symbol>
+      <text fontweight="92">" "</text>
+      <text fontweight="90">"then you will be asked to toss a fair coin. If the coin "</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <symbol fontweight="90">9</symbol>
+      <symbol fontweight="90">9</symbol>
+      <text fontweight="90">"lands head you will get paid the amount of money specified in "</text>
+      <text fontweight="92">Option A</text>
+      <text fontweight="90">". If the coin lands tail you will play out the lottery for "</text>
+    </paragraph>
+    <paragraph fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <symbol fontweight="90">9</symbol>
+      <symbol fontweight="90">9</symbol>
+      <text fontweight="90">real, being paid one of the outcomes in the lottery.</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial"></text>
+    </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
       <text fontpointsize="16"></text>
     </paragraph>
     <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
-      <text fontpointsize="16" fontweight="92" fontunderlined="1"></text>
+      <text fontpointsize="16" fontweight="92" fontunderlined="1">How Is the Lottery Played Out?</text>
     </paragraph>
-    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial" alignment="2">
-      <text fontpointsize="16" fontstyle="90" fontweight="90" fontunderlined="0">-------------- Instructions are here ------------</text>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16">You will play out the lottery if your payment basis is the lottery. The lottery gives you an opportunity to win either &#163;X or &#163;Y or &#163;Z, depending on the lottery setting.  We will use disks in the closed bag that is numbered from 1 to 100 to represent the chance of winning some money from the lottery. The disks are in integer number. There are two basic lottery design: a 2-outcome lottery and a 3-outcome lottery.</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16"></text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16" fontweight="92">Here is the example of a 2-outcome lottery.</text>
+      <text fontpointsize="16">" Suppose you get a lottery that gives you a 0.35 chance of winning &#163;20 and a 0.65 chance of winning of &#163;10. Then you are presented a closed bag with 100 disks in it that are numbered from 1 to 100 and you draw a disk by yourself. If your draw a disk numbered from 1 to 35 then you will get paid &#163;20. If your draw a disk numbered from 36 to 100 then you will get paid &#163;10."</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16"></text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16" fontweight="92">Here is the example of a 3-outcome lottery</text>
+      <text fontpointsize="16">. Suppose you get a lottery that gives you a 0.25 chance of winning &#163;20, a 0.50 chance of winning &#163;15 and a 0.25 chance of winning &#163;10. Then you are presented a closed bag with 100 disk in it that are numbered from 1 to 100 and you draw a disk by yourself. If your draw a disk numbered from 1 to 25 you will get paid &#163;20. If your draw a disk numbered from 26 to 75 you will get paid &#163;15. If your draw a disk numbered from 76 to 100 you will get paid &#163;10.</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16"></text>
     </paragraph>
   </paragraphlayout>
 </richtext>
