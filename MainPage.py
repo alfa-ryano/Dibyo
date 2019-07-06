@@ -29,19 +29,19 @@ class Application():
         self.pageList.append(
             InstructionPage(None, self, "instruction/Instruction1.xml", InstructionPage.WITHOUT_PREV_BUTTON))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_EXAMPLE, 0, 30, 0.65, 15, 0.35, -1, -1))
+                                            PreferencePage.TYPE_EXAMPLE, 0, 10, 10, 80, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction2a.xml"))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_DEMO, 0, 30, 0.65, 15, 0.35, -1, -1))
+                                            PreferencePage.TYPE_DEMO, 0, 20, 20, 60, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction2b.xml"))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_DEMO2, 0, 30, 0.65, 15, 0.35, -1, -1))
+                                            PreferencePage.TYPE_DEMO2, 0, 30, 30, 40, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction3.xml", InstructionPage.PAYMENT))
         # These are practice session 1 and 2
         self.pageList.append(PreferencePage(None, self, "instruction/Practice1.xml",
-                                            PreferencePage.TYPE_PRACTICE, 0, 30, 0.65, 15, 0.35, -1, -1))
+                                            PreferencePage.TYPE_PRACTICE, 0, 10, 10, 80, 10, -1))
         self.pageList.append(PreferencePage(None, self, "instruction/Practice2.xml",
-                                            PreferencePage.TYPE_PRACTICE, 0, 35, 0.5, 20, 0.5, -1, -1))
+                                            PreferencePage.TYPE_PRACTICE, 0, 40, 40, 60, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction4.xml", InstructionPage.LAST))
 
         csvPath = os.path.abspath("sheets/Lottery.csv")
@@ -57,34 +57,18 @@ class Application():
                 type = PreferencePage.TYPE_REAL_FINAL
 
             pn = float(row[0]) if isfloat(row[0]) else -1
-            v1 = float(row[1]) if isfloat(row[1]) else -1
-            p1 = float(row[2]) if isfloat(row[2]) else -1
-            v2 = float(row[3]) if isfloat(row[3]) else -1
-            p2 = float(row[4]) if isfloat(row[4]) else -1
-            v3 = float(row[5]) if isfloat(row[5]) else -1
-            p3 = float(row[6]) if isfloat(row[6]) else -1
+            mc = float(row[1]) if isfloat(row[1]) else -1
+            n = float(row[2]) if isfloat(row[2]) else -1
+            u = float(row[3]) if isfloat(row[3]) else -1
+            o1 = float(row[4]) if isfloat(row[4]) else -1
+            o2 = float(row[5]) if isfloat(row[5]) else -1
 
-            instructionFile = "instruction/PreferenceSheetInstruction.xml"
-            if (p1 == -1 or p1 == 0) and (p2 == -1 or p2 == 0) and (p3 == -1 or p3 == 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-Empty.xml"
-            elif (p1 == -1 or p1 == 0) and (p2 == -1 or p2 == 0) and (p3 != -1 and p3 != 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-One.xml"
-            elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 == -1 or p3 == 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-One.xml"
-            elif (p1 == -1 or p1 == 0) and (p2 != -1 and p2 != 0) and (p3 != -1 and p3 != 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-Two.xml"
-            elif (p1 != -1 and p1 != 0) and (p2 == -1 or p2 == 0) and (p3 == -1 or p3 == 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-One.xml"
-            elif (p1 != -1 and p1 != 0) and (p2 == -1 or p2 == 0) and (p3 != -1 and p3 != 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-Two.xml"
-            elif (p1 != -1 and p1 != 0) and (p2 != -1 and p2 != 0) and (p3 == -1 or p3 == 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-Two.xml"
-            elif (p1 != -1 and p1 != 0) and (p2 != -1 and p2 != 0) and (p3 != -1 and p3 != 0):
-                instructionFile = "instruction/PreferenceSheetInstruction-Three.xml"
+            instructionFile = "instruction/PreferenceSheetInstructionRedBlack.xml"
 
             self.pageList.append(PreferencePage(None, self, instructionFile,
-                                                type, pn, v1, p1, v2, p2, v3, p3))
+                                                type, pn, mc, n, u, o1, o2))
             i += 1
+
         csvfile.close()
         self.pageList.append(EndPage(None, self, "instruction/END.xml"))
 

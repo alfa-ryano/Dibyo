@@ -23,12 +23,12 @@ import wx.lib.mixins.inspection
 import sys, os
 
 # stuff for debugging
-print "Python", sys.version
+print "Python:", sys.version
 print "wx.version:", wx.version()
 ##print "pid:", os.getpid(); raw_input("Press Enter...")
 
-assertMode = wx.PYAPP_ASSERT_DIALOG
-##assertMode = wx.PYAPP_ASSERT_EXCEPTION
+# assertMode = wx.PYAPP_ASSERT_DIALOG
+#assertMode = wx.PYAPP_ASSERT_EXCEPTION
 
 
 #----------------------------------------------------------------------------
@@ -52,7 +52,7 @@ class RunDemoApp(wx.App, wx.lib.mixins.inspection.InspectionMixin):
     def OnInit(self):
         wx.Log.SetActiveTarget(wx.LogStderr())
 
-        self.SetAssertMode(assertMode)
+        # self.SetAssertMode(assertMode)
         self.InitInspection()  # for the InspectionMixin base class
 
         frame = wx.Frame(None, -1, "RunDemo: " + self.name, pos=(50,50), size=(200,100),

@@ -606,10 +606,8 @@ class RichTextFrame(wx.Frame):
                 self.Bind(wx.EVT_UPDATE_UI, updateUI, item)
 
         tbar = self.CreateToolBar()
-        doBind(tbar.AddTool(-1, images._rt_open.GetBitmap(),
-                            shortHelpString="Open"), self.OnFileOpen)
-        doBind(tbar.AddTool(-1, images._rt_save.GetBitmap(),
-                            shortHelpString="Save"), self.OnFileSave)
+        doBind(tbar.AddTool(-1, images._rt_open.GetBitmap(), shortHelpString="Open"), self.OnFileOpen)
+        doBind(tbar.AddTool(-1, images._rt_save.GetBitmap(), shortHelpString="Save"), self.OnFileSave)
         tbar.AddSeparator()
         doBind(tbar.AddTool(wx.ID_CUT, images._rt_cut.GetBitmap(),
                             shortHelpString="Cut"), self.ForwardEvent, self.ForwardEvent)

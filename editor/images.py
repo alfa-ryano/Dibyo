@@ -4481,7 +4481,7 @@ TheKid = PyEmbeddedImage(
     "s85woAvaMJH2DpcJS6xo4llbOKI3LMnkvVyPWEXgMPRYMalCZUIJx64IZhUcpglTnXDYU0e+"
     "280oSupIRIfVytoCQJ2oDoTH1sR0Neg8oxYBOjliUEMX8BqXFf3qiONxxeqCDsXuRsEbZ0f8"
     "zS89j9f7ipPV8CG7jcfjVsT+PRdfuP1Nfym+4/d9+n/5737s7td0sf02H994KNb3P1sem9t/"
-    "W/76X/kobj/y+p1/+6c+eve//zNfwbN/fveeN9oH2xc/98zF3/+5H797cfdbbpSdnJiXE5zV"
+    "W/76X/kobj/y+n/+6c+eve//zNfwbN/fveeN9oH2xc/98zF3/+5H797cfdbbpSdnJiXE5zV"
     "gzjmTs0C0FCM4iWadmZe3I/wNgM154JURa1AsZyiFJpj04Z/LnISk0C8YXWne6FZUtMJ96oq"
     "ejgkGrAKafMSgAmceRIjROdoOBorMK/XEERzrI1NRnFAKmsViUBRgswoHF3YvUFCMcMgnamU"
     "hKKnGYQK6SBkxCt6L+RTOTf0DMehGuZdRbEJUzXsdjtGDKM7iwojBoVftlmUopBWIkYjimoK"
