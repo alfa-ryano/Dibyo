@@ -9,6 +9,7 @@ import os
 import csv
 
 from SubjectNumberPage import SubjectNumberPage
+from GuessNumberPage import GuessNumberPage
 from WelcomePage import WelcomePage
 from PreferencePage import PreferencePage
 from InstructionPage import InstructionPage
@@ -24,24 +25,25 @@ class Application():
         self.subjectNumber = ""
 
         # These are the screens of the experiment. It is ordered as explained in its lists
+        self.pageList.append(GuessNumberPage(None, self))  # a guess number quiz
         self.pageList.append(SubjectNumberPage(None, self))  # write down the subject number
         self.pageList.append(WelcomePage(None, self))  # nothing fancy. Just click continue
         self.pageList.append(
             InstructionPage(None, self, "instruction/Instruction1.xml", InstructionPage.WITHOUT_PREV_BUTTON))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_EXAMPLE, 0, 10, 10, 80, 10, -1))
+                                            PreferencePage.TYPE_EXAMPLE, 0, 10, 0, 10, 80, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction2a.xml"))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_DEMO, 0, 20, 20, 60, 10, -1))
+                                            PreferencePage.TYPE_DEMO, 0, 20, 0, 20, 60, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction2b.xml"))
         self.pageList.append(PreferencePage(None, self, "instruction/ExampleInstruction.xml",
-                                            PreferencePage.TYPE_DEMO2, 0, 30, 30, 40, 10, -1))
+                                            PreferencePage.TYPE_DEMO2, 0, 30, 0, 30, 40, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction3.xml", InstructionPage.PAYMENT))
         # These are practice session 1 and 2
         self.pageList.append(PreferencePage(None, self, "instruction/Practice1.xml",
-                                            PreferencePage.TYPE_PRACTICE, 0, 10, 10, 80, 10, -1))
+                                            PreferencePage.TYPE_PRACTICE, 0, 10, 0, 10, 80, 10, -1))
         self.pageList.append(PreferencePage(None, self, "instruction/Practice2.xml",
-                                            PreferencePage.TYPE_PRACTICE, 0, 40, 40, 60, 10, -1))
+                                            PreferencePage.TYPE_PRACTICE, 0, 40, 0, 40, 60, 10, -1))
         self.pageList.append(InstructionPage(None, self, "instruction/Instruction4.xml", InstructionPage.LAST))
 
         csvPath = os.path.abspath("sheets/Lottery.csv")
@@ -57,16 +59,20 @@ class Application():
                 type = PreferencePage.TYPE_REAL_FINAL
 
             pn = float(row[0]) if isfloat(row[0]) else -1
-            mc = float(row[1]) if isfloat(row[1]) else -1
-            n = float(row[2]) if isfloat(row[2]) else -1
-            u = float(row[3]) if isfloat(row[3]) else -1
-            o1 = float(row[4]) if isfloat(row[4]) else -1
-            o2 = float(row[5]) if isfloat(row[5]) else -1
+            mc1 = float(row[1]) if isfloat(row[1]) else -1
+            mc2 = float(row[2]) if isfloat(row[1]) else -1
+            n = float(row[3]) if isfloat(row[2]) else -1
+            u = float(row[4]) if isfloat(row[3]) else -1
+            o1 = float(row[5]) if isfloat(row[4]) else -1
+            o2 = float(row[6]) if isfloat(row[5]) else -1
 
-            instructionFile = "instruction/PreferenceSheetInstructionRedBlack.xml"
+            #choose appropriate instruction file according to the value of Money Colour 2
+            instructionFile = "instruction/InstructionIntervalAmbiguity.xml"
+            if mc2 > 0:
+                instructionFile = "instruction/InstructionIntervalCompound.xml"
 
             self.pageList.append(PreferencePage(None, self, instructionFile,
-                                                type, pn, mc, n, u, o1, o2))
+                                                type, pn, mc1, mc2, n, u, o1, o2))
             i += 1
 
         csvfile.close()

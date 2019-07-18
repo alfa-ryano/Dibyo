@@ -1,41 +1,80 @@
-from PyQt4 import QtGui, uic, QtCore
-from PyQt4.QtCore import QFile, QTextStream, Qt
-from customutil import CountDownTimer, format_decimal, COUNTDOWN_COUNT
+import wx
+from random import randrange
 
 
-class InputNumberDialog(QtGui.QDialog):
-    def __init__(self, main_form, text, experiment_name):
-        super(InputNumberDialog, self).__init__()
+class GuessNumberPage(wx.Frame):
+    def __init__(self, parent, application):
+        super(GuessNumberPage, self) \
+            .__init__(parent, title="Guess Number", size=(640, 480), style=wx.DEFAULT_FRAME_STYLE & (~wx.CLOSE_BOX))
 
-        uic.loadUi('ui/dialog.ui', self)
-        self.setWindowFlags(QtCore.Qt.CustomizeWindowHint)
-        self.main_form = main_form
-        self.label_title.setText(experiment_name)
-        self.button_ok.clicked.connect(self.on_button_ok_clicked)
+        self.a = randrange(10)
+        self.b = randrange(10)
+        self.c = randrange(10)
 
-        self.text_edit_instruction.setHtml(text)
+        self.question = str(self.a) + " + " + str(self.b) + " x " + str(self.c) + " = ?"
+        self.answer = self.a + self.b * self.c
+        self.guess = None
 
-        self.counter = COUNTDOWN_COUNT
-        self.countDownTimer = CountDownTimer(10, 0, 1, self.countdown)
-        self.countDownTimer.start()
+        self.application = application
+        self.Hide()
+        self.Center()
+        self.initUI()
+        # self.Maximize(True)
+        self.ShowFullScreen(True)
+        self.Hide()
 
-    def countdown(self):
-        if self.counter > 0:
-            self.button_ok.setText("NEXT (" + str(self.counter) + ")")
-            self.counter -= 1
+    def initUI(self):
+        panel = wx.Panel(self)
+
+        vbox = wx.BoxSizer(wx.VERTICAL)
+        hbox1 = wx.BoxSizer(wx.HORIZONTAL)
+
+        font = wx.Font(22, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.BOLD)
+
+        label = wx.StaticText(panel, label=self.question)
+        label.SetFont(font)
+
+        self.guessText = wx.TextCtrl(panel, size=(400, -1), style=wx.TE_CENTRE)
+        self.guessText.SetFont(font)
+
+        vbox1a = wx.BoxSizer(wx.VERTICAL)
+        vbox1a.Add(label, flag=wx.ALIGN_CENTER)
+        vbox1a.Add(self.guessText, flag=wx.ALIGN_CENTER | wx.TOP, border=10)
+        hbox1.Add(vbox1a, flag=wx.ALIGN_CENTER_VERTICAL, proportion=1)
+
+        vbox.Add(hbox1, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM,
+                 border=10, proportion=1)
+
+        hbox2 = wx.BoxSizer(wx.HORIZONTAL)
+        button = wx.Button(panel, label="SUBMIT")
+        button.SetFont(font)
+        button.Bind(wx.EVT_BUTTON, self.OnButtonSubmitClick)
+        hbox2.Add(button, proportion=1)
+        vbox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
+
+        panel.SetSizer(vbox)
+
+    def OnButtonSubmitClick(self, event):
+        guessText = self.guessText.GetValue().strip()
+        isNumber = self.is_number(guessText)
+        if isNumber:
+            self.guess = int(guessText)
         else:
-            self.countDownTimer.stop()
-            self.button_ok.setEnabled(True)
-            self.button_ok.setText("NEXT")
+            self.guess = -1
+            wx.MessageBox("Your answer is not correct!", "Warning",
+                          wx.OK | wx.ICON_WARNING)
+            return
 
-    def keyPressEvent(self, event):
-        if not event.key() == Qt.Key_Escape:
-            super(InputNumberDialog, self).keyPressEvent(event)
+        if self.guess != self.answer:
+            wx.MessageBox("Your answer is not correct!", "Warning",
+                          wx.OK | wx.ICON_WARNING)
+            return
 
-    def on_button_ok_clicked(self):
-        self.accept()
+        self.application.NextPage()
 
-    def get_initial_asset_percentage(self):
-        value = self.spinbox_asset_value.value()
-        return value
-
+    def is_number(self, s):
+        try:
+            int(s)
+            return True
+        except ValueError:
+            return False

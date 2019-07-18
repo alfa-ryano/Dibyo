@@ -1,4 +1,5 @@
 import wx
+from random import randrange
 
 class SubjectNumberPage(wx.Frame):
     def __init__(self, parent, application):

@@ -20,7 +20,7 @@ class PreferencePage(wx.Frame):
     TYPE_PRACTICE = 4
     TYPE_DEMO2 = 5
 
-    def __init__(self, parent, application, instructionFile, type=TYPE_REAL, pn=0, mc=0, n=0, u=0, o1=0, o2=0):
+    def __init__(self, parent, application, instructionFile, type=TYPE_REAL, pn=0, mc1=0, mc2=0, n=0, u=0, o1=0, o2=0):
         super(PreferencePage, self).__init__(parent, title="Preference Page", size=(640, 480))
         self.application = application
         self.type = type
@@ -29,11 +29,16 @@ class PreferencePage(wx.Frame):
         self.inactiveColor = wx.Colour(254, 254, 254)
         self.blankColor = wx.Colour(255, 255, 255)
         self.pn = pn
-        self.mc = mc
+        self.mc1 = mc1
+        self.mc2 = mc2
         self.n = n
         self.u = u
         self.o1 = o1
         self.o2 = o2
+        self.mc1u = self.mc1 + self.u
+        self.g = "gain"
+        if self.o1 < 0:
+            self.g = "loss"
 
         self.payoff = 0.00
         self.fromPayoff = 0.00
@@ -61,7 +66,7 @@ class PreferencePage(wx.Frame):
     def initUI(self):  # define a panel for the preference page
 
         self.increment = 0.25
-        pn, mc, n, u, o1, o2 = self.pn, self.mc, self.n, self.u, self.o1, self.o2
+        pn, mc, n, u, o1, o2 = self.pn, self.mc1, self.n, self.u, self.o1, self.o2
         row, col = 0, 0
 
         panel = wx.Panel(self)
@@ -87,11 +92,14 @@ class PreferencePage(wx.Frame):
 
         # replace the variable markups with the real values
         text = text.replace("[pn]", ('%.0f' % self.pn))
-        text = text.replace("[mc]", ('%.0f' % self.mc))
+        text = text.replace("[mc1]", ('%.0f' % self.mc1))
+        text = text.replace("[mc2]", ('%.0f' % self.mc2))
         text = text.replace("[n]", ('%.0f' % self.n))
         text = text.replace("[u]", ('%.0f' % self.u))
         text = text.replace("[o1]", ('%.2f' % self.o1))
         text = text.replace("[o2]", ('%.2f' % self.o2))
+        text = text.replace("[mc1u]", ('%.0f' % self.mc1u))
+        text = text.replace("[g]", self.g)
 
         # rewrite the xml back to the richtext
         handler2 = wx.richtext.RichTextXMLHandler()

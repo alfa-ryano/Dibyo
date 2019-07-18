@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+  <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Segoe UI" alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontpointsize="16" fontfamily="74" fontstyle="90" fontweight="92" fontunderlined="0" fontface="Arial">Preference Sheet [pn].</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="92"></text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">"You are asked to state your preference between certain money (as in the second column) and the lottery. The lottery gives you a chance either to "</text>
+      <text fontweight="92">[g]</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">" "</text>
+      <text fontweight="92">&#163;[o1]</text>
+      <text fontweight="90">" or to get nothing. Below is the lottery structure:"</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">"Number of MONEY colour in the deck can be anything between "</text>
+      <text fontweight="92">[mc1]</text>
+      <text fontweight="90">" and "</text>
+      <text fontweight="92">[mc1u]</text>
+      <text fontweight="90">" (inclusive). So, the experimenter will construct a deck of 100 cards for the lottery by taking:"</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">"- "</text>
+      <text fontweight="92">[mc1]</text>
+      <text fontweight="90">" cards from the stack that includes your MONEY colour "</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">"- "</text>
+      <text fontweight="92">[n]</text>
+      <text fontweight="90">" from the stack that includes your NOTHING colour and"</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">"- "</text>
+      <text fontweight="92">[u]</text>
+      <text fontweight="90">" cards from the UNKNOWN STACK."</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">You have to state your preference by choosing one of the three options in the response sheet. You also have to insert the amount of money in the insert box.</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text></text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90">There are three answer options to state your preference: i) I am sure I prefer the lottery; ii) I am not sure about my preference; iii) I am sure I prefer to get the certain amount. In addition, you should insert the amount of money (in the insert box) at which you are willing to switch from being sure you prefer the lottery (</text>
+      <text fontweight="92">Option B</text>
+      <text fontweight="90">) to being sure you prefer the certain amount (</text>
+      <text fontweight="92">Option A</text>
+      <text fontweight="90">"), or otherwise. "</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="90"></text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="92">Option A</text>
+      <text fontweight="90">": You will receive the "</text>
+      <text fontweight="92">certain amount</text>
+      <text fontweight="90">" (second column) for sure."</text>
+    </paragraph>
+    <paragraph fontpointsize="13" fontfamily="70" fontstyle="90" fontweight="90" fontunderlined="0" fontface="Arial">
+      <text fontweight="92">Option B</text>
+      <text fontweight="90">": You will have a chance to "</text>
+      <text fontweight="92">[g]</text>
+      <text fontweight="90">" "</text>
+      <text fontweight="92">&#163;[o1]</text>
+      <text fontweight="90">" if your "</text>
+      <text fontweight="92">MONEY</text>
+      <text fontweight="90">" colour is drawn and a chance to receive nothing if "</text>
+      <text fontweight="92">NOTHING</text>
+      <text fontweight="90">" colour is drawn."</text>
+    </paragraph>
+  </paragraphlayout>
+</richtext>
