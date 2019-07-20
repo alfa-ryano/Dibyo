@@ -124,9 +124,15 @@ class PreferencePage(wx.Frame):
         grid.AppendCols(4)
 
         grid.SetColLabelValue(0, "Certain amount")
-        grid.SetColLabelValue(1, "I am sure I prefer the lottery")
         grid.SetColLabelValue(2, "I am not sure about my preference")
-        grid.SetColLabelValue(3, "I am sure I prefer to get the certain amount")
+        if o1 >= 0.0:
+            grid.SetColLabelValue(1, "I am sure I prefer the lottery")
+            grid.SetColLabelValue(3, "I am sure I prefer to get the certain amount")
+        else:
+            grid.SetColLabelValue(1, "I am sure I prefer to get the certain amount")
+            grid.SetColLabelValue(3, "I am sure I prefer the lottery")
+
+
 
         if o1 >= 0.0:
             bottomValue = 0.0
