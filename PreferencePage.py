@@ -96,7 +96,10 @@ class PreferencePage(wx.Frame):
         text = text.replace("[mc2]", ('%.0f' % self.mc2))
         text = text.replace("[n]", ('%.0f' % self.n))
         text = text.replace("[u]", ('%.0f' % self.u))
-        text = text.replace("[o1]", ('%.2f' % self.o1))
+        if self.o1 >= 0.0:
+            text = text.replace("[o1]", ('%.2f' % self.o1))
+        else:
+            text = text.replace("[o1]", ('%.2f' % abs(self.o1)))
         text = text.replace("[o2]", ('%.2f' % self.o2))
         text = text.replace("[mc1u]", ('%.0f' % self.mc1u))
         text = text.replace("[g]", self.g)
