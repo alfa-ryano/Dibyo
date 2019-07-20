@@ -150,7 +150,7 @@ class PreferencePage(wx.Frame):
             topValue = o1
             while bottomValue >= topValue:
                 grid.AppendRows(1)
-                grid.SetCellValue(row, col, "Receiving " + unichr(163) + ('%.2f' % bottomValue))
+                grid.SetCellValue(row, col, "Losing " + unichr(163) + ('%.2f' % abs(bottomValue)))
                 grid.SetCellFont(row, col, wx.Font(9, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
                 grid.SetCellBackgroundColour(row, col, wx.Colour(240, 240, 240))
                 grid.SetCellAlignment(row, col, wx.ALIGN_CENTRE, wx.ALIGN_TOP)
@@ -515,15 +515,23 @@ class PreferencePage(wx.Frame):
                 cellColor = grid.GetCellBackgroundColour(row, 1)
                 if cellColor.GetRGBA() == self.selectedColor.GetRGBA():
                     text = grid.GetCellValue(row, 0).encode("utf-8")
-                    nominalValue = text[12:]
-                    self.fromPayoff = float(nominalValue)
+                    if self.o1 >= 0:
+                        nominalValue = text[12:]
+                        self.fromPayoff = float(nominalValue)
+                    else:
+                        nominalValue = text[9:]
+                        self.fromPayoff = -1 * float(nominalValue)
         elif col == 3:
             for row in range(0, grid.GetNumberRows(), 1):
                 cellColor = grid.GetCellBackgroundColour(row, col)
                 if cellColor.GetRGBA() == self.selectedColor.GetRGBA():
                     text = grid.GetCellValue(row, 0).encode("utf-8")
-                    nominalValue = text[12:]
-                    self.toPayoff = float(nominalValue)
+                    if self.o1 >= 0:
+                        nominalValue = text[12:]
+                        self.toPayoff = float(nominalValue)
+                    else:
+                        nominalValue = text[9:]
+                        self.toPayoff = -1 * float(nominalValue)
                     break
 
         self.labelPayoff.SetLabel("Insert the amount of money\n"
@@ -577,7 +585,14 @@ class PreferencePage(wx.Frame):
 
                 for gridRow in range(0, grid.GetNumberRows(), 1):
                     text = grid.GetCellValue(gridRow, 0).encode("utf-8")
-                    nominalValue = text[12:]
+                    if preferenceSheet.o1 > 0:
+                        nominalValue = text[12:]
+                    else:
+                        temp = float(text[9:])
+                        if temp == 0:
+                            nominalValue = str(temp)
+                        else:
+                            nominalValue = str(-1 * temp)
                     row.append(nominalValue)
 
                     for gridCol in range(1, grid.GetNumberCols(), 1):
