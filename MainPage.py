@@ -98,10 +98,10 @@ class Application():
             self.pageList[self.currentPage + 1].Hide()
 
     def Shutdown(self):
-        # self.mainProcess.Exit()
         for page in self.pageList:
             page.Hide()
             page.Close(True)
+        self.mainProcess.Exit()
 
 
 app = wx.App(False)

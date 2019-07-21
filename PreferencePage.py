@@ -616,22 +616,22 @@ class PreferencePage(wx.Frame):
             csvfile.write("\n".join(data))
             csvfile.close()
 
-            config = ConfigParser.ConfigParser()
-            config.read("client.ini")
-            server = config.get("Config", "Server")
-            server += "/post"
-
-            file = open(csvPath, 'r')
-            text = file.read()
-            file.close()
-            myData = {
-                "subject": filename,
-                "data": text
-            }
-            response = requests.post(server, data=myData)
-            if (response.text <> "1"):
-                print "Error Save on Server"
-                raise NameError("Error Save on Server")
+            # config = ConfigParser.ConfigParser()
+            # config.read("client.ini")
+            # server = config.get("Config", "Server")
+            # server += "/post"
+            #
+            # file = open(csvPath, 'r')
+            # text = file.read()
+            # file.close()
+            # myData = {
+            #     "subject": filename,
+            #     "data": text
+            # }
+            # response = requests.post(server, data=myData)
+            # if (response.text <> "1"):
+            #     print "Error Save on Server"
+            #     raise NameError("Error Save on Server")
 
             return True
         except Exception as e:
