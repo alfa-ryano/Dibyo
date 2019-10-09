@@ -37,10 +37,10 @@ class SubjectNumberPage(wx.Frame):
                  border=10, proportion=1)
 
         hbox2 = wx.BoxSizer(wx.HORIZONTAL)
-        button = wx.Button(panel, label="SUBMIT")
-        button.SetFont(font)
-        button.Bind(wx.EVT_BUTTON, self.OnButtonSubmitClick)
-        hbox2.Add(button, proportion=1)
+        self.button = wx.Button(panel, label="SUBMIT")
+        self.button.SetFont(font)
+        self.button.Bind(wx.EVT_BUTTON, self.OnButtonSubmitClick)
+        hbox2.Add(self.button, proportion=1)
         vbox.Add(hbox2, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP | wx.BOTTOM, border=8)
 
         panel.SetSizer(vbox)

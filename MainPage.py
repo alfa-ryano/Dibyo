@@ -7,6 +7,7 @@ This version imports files from directory Imprecise 9
 import wx
 import os
 import csv
+import threading
 
 from SubjectNumberPage import SubjectNumberPage
 from GuessNumberPage import GuessNumberPage
@@ -15,6 +16,7 @@ from PreferencePage import PreferencePage
 from InstructionPage import InstructionPage
 from EndPage import EndPage
 from MyUtil import isfloat
+from Simulation import Simulation
 
 
 class Application():
@@ -26,7 +28,7 @@ class Application():
 
         # # These are the screens of the experiment. It is ordered as explained in its lists
         # self.pageList.append(GuessNumberPage(None, self))  # a guess number quiz
-        # self.pageList.append(SubjectNumberPage(None, self))  # write down the subject number
+        self.pageList.append(SubjectNumberPage(None, self))  # write down the subject number
         # self.pageList.append(WelcomePage(None, self))  # nothing fancy. Just click continue
         # self.pageList.append(
         #     InstructionPage(None, self, "instruction/Instruction1.xml", InstructionPage.WITHOUT_PREV_BUTTON))
@@ -66,7 +68,7 @@ class Application():
             o1 = float(row[5]) if isfloat(row[4]) else -1
             o2 = float(row[6]) if isfloat(row[5]) else -1
 
-            #choose appropriate instruction file according to the value of Money Colour 2
+            # choose appropriate instruction file according to the value of Money Colour 2
             instructionFile = "instruction/InstructionIntervalAmbiguity.xml"
             if mc2 > 0:
                 instructionFile = "instruction/InstructionIntervalCompound.xml"
@@ -104,6 +106,19 @@ class Application():
         self.mainProcess.Exit()
 
 
+#-----
+def simulate(main):
+    simulation = Simulation(main)
+    simulation.simulate()
+#-----
+
 app = wx.App(False)
-Application(app).Start()
+main = Application(app)
+main.Start()
+
+#-----
+thread1 = threading.Thread(target = simulate, args = (main,))
+thread1.start()
+#-----
+
 app.MainLoop()

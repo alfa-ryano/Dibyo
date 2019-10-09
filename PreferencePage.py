@@ -206,7 +206,8 @@ class PreferencePage(wx.Frame):
         buttonNext.SetFont(font)
         buttonNext.Bind(wx.EVT_BUTTON, self.OnButtonNextClick)
 
-        buttonClear = wx.Button(panel, label="CLEAR")
+        self.buttonClear = wx.Button(panel, label="CLEAR")
+        buttonClear = self.buttonClear
         buttonClear.SetFont(font)
         buttonClear.Bind(wx.EVT_BUTTON, self.OnButtonClearCLick)
 
@@ -582,6 +583,11 @@ class PreferencePage(wx.Frame):
             preferenceSheetNumber = 1
             data = []
             for preferenceSheet in preferenceSheetList:
+
+                #-----
+                preferenceSheetNumber = int(preferenceSheet.pn)
+                #-----
+
                 row = [str(preferenceSheetNumber)]
                 row.append(str(preferenceSheet.payoff))
                 grid = preferenceSheet.grid

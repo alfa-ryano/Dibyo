@@ -36,7 +36,8 @@ class EndPage(wx.Frame):
                  border=10, proportion=1)
 
         hbox3 = wx.BoxSizer(wx.HORIZONTAL)
-        buttonNext = wx.Button(panel, label="CLOSE THE SCREEN")
+        self.buttonNext = wx.Button(panel, label="CLOSE THE SCREEN")
+        buttonNext =self.buttonNext
         font = wx.Font(22, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.BOLD)
         buttonNext.SetFont(font)
         buttonNext.Bind(wx.EVT_BUTTON, self.OnButtonCloseClick)
